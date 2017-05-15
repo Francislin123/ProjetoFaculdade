@@ -13,7 +13,7 @@ import br.com.PessoaJuridica.Modelo.PessoaJuridica;
 
 @Controller
 public class PessoaJuridicaController {
-	
+	  
 	private PessoaJuridicaDao dao;
 
 	@Autowired
