@@ -1,26 +1,62 @@
-function Trim(strTexto) {
-	// Substitúi os espaços vazios no inicio e no fim da string por vazio.
-	return strTexto.replace(/^\s+|\s+$/g, '');
+function limpa_formulário_CEP() {
+	// Limpa valores do formulário de cep.
+	document.getElementById('BAIRRO').value = ("");
+	document.getElementById('CIDADE').value = ("");
+	document.getElementById('ESTADO').value = ("");
 }
 
-// Função para validação de CEP.
-function IsCEP(strCEP, blnVazio) {
-	// Caso o CEP não esteja nesse formato ele é inválido!
-	var objER = /^[0-9]{2}\.[0-9]{3}-[0-9]{3}$/;
+function meu_callback(conteudo) {
+	if (!("erro" in conteudo)) {
+		// Atualiza os campos com os valores.
+		document.getElementById('BAIRRO').value = (conteudo.BAIRRO);
+		document.getElementById('CIDADE').value = (conteudo.CIDADE);
+		document.getElementById('ESTADO').value = (conteudo.ESTADO);
+	} // end if.
+	else {
+		// CEP não Encontrado.
+		limpa_formulário_CEP();
+		alert("CEP não encontrado.");
+	}
+}
 
-	strCEP = Trim(strCEP)
-	if (strCEP.length > 0) {
-		if (objER.test(strCEP))
-			return true;
-		else
-			return false;
-	} else
-		return blnVazio;
-}
-function chkCEP(strCEP) {
-	var Retorno = IsCEP(strCEP, false)
-	if (Retorno)
-		alert("CEP Válido. Parabéns");
-	else
-		return Retorno;
-}
+function pesquisaCEP(valor) {
+
+	// Nova variável "CEP" somente com dígitos.
+	var CEP = valor.replace(/\D/g, '');
+
+	// Verifica se campo cep possui valor informado.
+	if (CEP != "") {
+
+		// Expressão regular para validar o CEP.
+		var validaCEP = /^[0-9]{8}$/;
+
+		// Valida o formato do CEP.
+		if (validaCEP.test(CEP)) {
+
+			// Preenche os campos com "..." enquanto consulta webservice.
+			document.getElementById('BAIRRO').value = "...";
+			document.getElementById('CIDADE').value = "...";
+			document.getElementById('ESTADO').value = "...";
+
+			// Cria um elemento javascript.
+			var script = document.createElement('script');
+
+			// Sincroniza com o callback.
+			script.src = '//viacep.com.br/ws/' + CEP
+					+ '/json/?callback=meu_callback';
+
+			// Insere script no documento e carrega o conteúdo.
+			document.body.appendChild(script);
+
+		} // end if.
+		else {
+			// CEP é inválido.
+			limpa_formulário_CEP();
+			alert("Formato de CEP inválido.");
+		}
+	} // end if.
+	else {
+		// cep sem valor, limpa formulário.
+		limpa_formulário_CEP();
+	}
+};

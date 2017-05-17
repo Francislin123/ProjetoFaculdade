@@ -13,6 +13,8 @@
  	<!-- It register the beans in context and scan the annotations inside beans and activate them -->
     <context:component-scan base-package="br.com.PessoaJuridica" />
     
+    <mvc:resources mapping="/resources/**" location="/resources/" /> 
+    
     <!-- This allow for dispatching requests to Controllers by registering 
     	 two beans - DefaultAnnotationHandlerMapping and AnnotationMethodHandlerAdapter -->
     <mvc:annotation-driven />

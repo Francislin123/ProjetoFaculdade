@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -41,6 +42,7 @@ public class PessoaJuridica implements Serializable {
 	private String PAIS;
 
 	@NotBlank(message = " O campo cep deve ser preenchido !")
+	@Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = " O campo cep deve ser preenchido !")
 	private String CEP;
 
 	@NotBlank(message = " O campo telefone deve ser preenchido !")

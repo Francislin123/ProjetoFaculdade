@@ -2,7 +2,3 @@
 	color: #ff0000;
 	font-weight: bold;
 }
-
-#listOfEmployees tr:first-child {
-	font-weight: bold;
-}

@@ -3,31 +3,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <title>Adicionar Pessoa Juridica</title>
 <meta charset="UTF-8"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    
+    <link type="text/css" rel="stylesheet" href="resources/css/us.css"  />
+	<script type="text/javascript" charset="utf-8" src="resources/js/validarCpf.js"></script>
 
-	<link rel="stylesheet" href="js/validarCpf.js" type="text/css" />
-	
-	<style>
-	.error 
-	{
-		color: #ff0000;
-		font-weight: bold;
-	}
-	#listOfEmployees tr:first-child{
-		font-weight: bold;
-	}
-	</style>
-	
 </head>
 <body>
 	<h3>Adicionar Pessoa Juridica</h3>
 	
-	<form action="adicionaPessoaJuridica" method="Post" onSubmit="return chkCEP(this.CEP.value)">
+	<form action="adicionaPessoaJuridica" method="Post" >
 	    <br/>
 	    <form:errors path="pessoaJuridica.RAZAO_SOCIAL" cssClass="error" /><br/>
 	    RAZAO SOCIAL:                 <input type="text" name="RAZAO_SOCIAL" autofocus="autofocus" placeholder="RAZAO SOCIAL" value="${pessoaJuridica.RAZAO_SOCIAL}" />
@@ -43,13 +33,13 @@
 		CIDADE:	                      <input type="text" name="CIDADE" placeholder="CIDADE" value="${pessoaJuridica.CIDADE}" />
 		<br/>
 		<form:errors path="pessoaJuridica.ESTADO" cssClass="error" /><br/>
-		ESTADO:	                      <input type="text" name="ESTADO" placeholder="ESTADO" value="${pessoaJuridica.ESTADO}" />
+		ESTADO:	                      <input type="text" name="ESTADO" id="ESTADO" placeholder="ESTADO" value="${pessoaJuridica.ESTADO}" />
 		<br/>
 		<form:errors path="pessoaJuridica.PAIS" cssClass="error" /><br/>
 		PAIS:	                      <input type="text" name="PAIS" placeholder="PAIS" value="${pessoaJuridica.PAIS}" />
 		<br/>
 		<form:errors path="pessoaJuridica.CEP" cssClass="error" /><br/>
-		CEP:	                      <input type="text" name="CEP" placeholder="CEP" value="${pessoaJuridica.CEP}" />
+        CEP:	                      <input name="CEP" pattern="[0-9]{5}-[0-9]{3}$" type="text" id="CEP" value="${pessoaJuridica.CEP}" />
 		<br/>
 		<form:errors path="pessoaJuridica.TELEFONE" cssClass="error" /><br/>
 		TELEFONE:                     <input type="text" name="TELEFONE" placeholder="TELEFONE" value="${pessoaJuridica.TELEFONE}" />
