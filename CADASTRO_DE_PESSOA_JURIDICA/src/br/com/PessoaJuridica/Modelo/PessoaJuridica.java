@@ -29,6 +29,12 @@ public class PessoaJuridica implements Serializable {
 	@NotBlank(message = " Nome fantasia deve ser preenchido !")
 	private String NOME_FANTASIA;
 
+	@NotBlank(message = " O campo cep deve ser preenchido !")
+	private String CEP;
+	
+	@NotBlank(message = " O campo rua deve ser preenchido !")
+	private String RUA; 
+	
 	@NotBlank(message = " O campo bairro deve ser preenchido !")
 	private String BAIRRO;
 
@@ -40,10 +46,6 @@ public class PessoaJuridica implements Serializable {
 
 	@NotBlank(message = " O campo pais deve ser preenchido !")
 	private String PAIS;
-
-	@NotBlank(message = " O campo cep deve ser preenchido !")
-	@Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = " O campo cep deve ser preenchido !")
-	private String CEP;
 
 	@NotBlank(message = " O campo telefone deve ser preenchido !")
 	private String TELEFONE;

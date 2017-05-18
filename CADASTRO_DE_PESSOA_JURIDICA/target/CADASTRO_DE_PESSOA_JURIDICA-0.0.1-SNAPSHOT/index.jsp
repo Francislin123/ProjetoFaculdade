@@ -15,6 +15,7 @@ body {
 		</h2>
 		<h3>
 			<a href="novaPessoaJuridica">Cadastro de Pessoa juridica </a>
+			<a href="cep">CEP</a>
 		</h3>
 	</div>
 </body>

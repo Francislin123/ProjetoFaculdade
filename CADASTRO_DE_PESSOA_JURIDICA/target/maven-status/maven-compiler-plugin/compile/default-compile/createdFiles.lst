@@ -1,5 +1,0 @@
-br\com\PessoaJuridica\Dao\PessoaJuridicaDao.class
-br\com\PessoaJuridica\Modelo\PessoaJuridica.class
-br\com\PessoaJuridica\Validation\PessoaJuridicaValidaCPFansCNPJ.class
-br\com\PessoaJuridica\Controller\PessoaJuridicaController.class
-br\com\PessoaJuridica\Dao\JpaPessoaJuridicaDao.class

@@ -2,3 +2,8 @@
 	color: #ff0000;
 	font-weight: bold;
 }
+
+#ibge{
+	background: transparent;
+	opacity: 0.0;
+}

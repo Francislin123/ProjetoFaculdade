@@ -26,6 +26,12 @@ public class PessoaJuridicaController {
 		System.out.println("Redirecionando para a pagina de cadastro");
 		return "AdicionaPessoaJuridica";
 	}
+	
+	@RequestMapping(value = "/cep", method = RequestMethod.GET)
+	public String form01() {
+		System.out.println("Redirecionando para a pagina de buscar de CEP");
+		return "buscaCep";
+	}
 
 	@RequestMapping(value = "/novaPessoaJuridicaErro", method = RequestMethod.POST)
 	public String adicionaErro(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {

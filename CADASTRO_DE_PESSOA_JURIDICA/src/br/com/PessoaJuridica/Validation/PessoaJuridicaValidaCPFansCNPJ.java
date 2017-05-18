@@ -14,8 +14,7 @@ public class PessoaJuridicaValidaCPFansCNPJ implements Validator {
 		return PessoaJuridica.class.isAssignableFrom(clazz);
 	}
 
-	public void validate(Object target, Errors errors) 
-	{
+	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "error.firstName", "First name is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "error.lastName", "Last name is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "error.email", "Email is required.");
