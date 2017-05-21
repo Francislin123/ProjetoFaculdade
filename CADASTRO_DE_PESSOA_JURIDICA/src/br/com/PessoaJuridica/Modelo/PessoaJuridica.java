@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -31,10 +30,10 @@ public class PessoaJuridica implements Serializable {
 
 	@NotBlank(message = " O campo cep deve ser preenchido !")
 	private String CEP;
-	
+
 	@NotBlank(message = " O campo rua deve ser preenchido !")
-	private String RUA; 
-	
+	private String RUA;
+
 	@NotBlank(message = " O campo bairro deve ser preenchido !")
 	private String BAIRRO;
 
@@ -88,8 +87,8 @@ public class PessoaJuridica implements Serializable {
 	public PessoaJuridica() {
 	}
 
-	public PessoaJuridica(Integer PESSOA_JURIDICA_ID, String RAZAO_SOCIAL, String NOME_FANTASIA, String BAIRRO,
-			String CIDADE, String ESTADO, String PAIS, String CEP, String TELEFONE, String CNPJ,
+	public PessoaJuridica(Integer PESSOA_JURIDICA_ID, String RAZAO_SOCIAL, String NOME_FANTASIA, String CEP, String RUA,
+			String BAIRRO, String CIDADE, String ESTADO, String PAIS, String TELEFONE, String CNPJ,
 			String INSCRICAO_ESTADUAL, String INSCRICAO_MUNICIPAL, String EMAIL, Date DATA_DE_CONSTITUICAO,
 			String ATIVIDADES_DESENVOLVIDAS, String GENERO_DA_ATIVIDADES, String ESPECE_DA_ATIVIDADE,
 			String REPRESENTANTE_LEGAL_NOME, String CPF_REPRESENTANTE_LEGAL, String TELEFONE_REPRESENTANTE_LEGAL) {
@@ -97,11 +96,14 @@ public class PessoaJuridica implements Serializable {
 		this.PESSOA_JURIDICA_ID = PESSOA_JURIDICA_ID;
 		this.RAZAO_SOCIAL = RAZAO_SOCIAL;
 		this.NOME_FANTASIA = NOME_FANTASIA;
+		// Endereço
+		this.CEP = CEP;
+		this.RUA = RUA;
 		this.BAIRRO = BAIRRO;
 		this.CIDADE = CIDADE;
 		this.ESTADO = ESTADO;
 		this.PAIS = PAIS;
-		this.CEP = CEP;
+		// ------------------ //
 		this.TELEFONE = TELEFONE;
 		this.CNPJ = CNPJ;
 		this.INSCRICAO_ESTADUAL = INSCRICAO_ESTADUAL;
@@ -274,6 +276,14 @@ public class PessoaJuridica implements Serializable {
 
 	public void setTELEFONE_REPRESENTANTE_LEGAL(String tELEFONE_REPRESENTANTE_LEGAL) {
 		TELEFONE_REPRESENTANTE_LEGAL = tELEFONE_REPRESENTANTE_LEGAL;
+	}
+
+	public String getRUA() {
+		return RUA;
+	}
+
+	public void setRUA(String Rua) {
+		RUA = Rua;
 	}
 
 	@Override
