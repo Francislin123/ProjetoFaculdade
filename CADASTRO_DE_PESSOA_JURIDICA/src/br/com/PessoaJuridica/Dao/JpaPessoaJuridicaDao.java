@@ -1,5 +1,7 @@
 package br.com.PessoaJuridica.Dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,5 +19,9 @@ public class JpaPessoaJuridicaDao implements PessoaJuridicaDao {
 
 	public void adiciona(PessoaJuridica pessoaJuridica) {
 		this.manager.persist(pessoaJuridica);
+	}
+
+	public List<PessoaJuridica> getAllPessoaJuridica() {
+		return this.manager.createQuery("select p from PessoaJuridica p", PessoaJuridica.class).getResultList();
 	}
 }

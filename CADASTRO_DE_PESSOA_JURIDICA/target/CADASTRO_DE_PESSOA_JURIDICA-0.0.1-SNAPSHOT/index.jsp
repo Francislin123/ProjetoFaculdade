@@ -14,8 +14,9 @@ body {
 			Bem Vindo!<br> <br>
 		</h2>
 		<h3>
-			<a href="novaPessoaJuridica">Cadastro de Pessoa juridica </a>
-			<a href="cep">CEP</a>
+			<a href="novaPessoaJuridica">Cadastro de Pessoa juridica </a> 
+			<br>
+			<a href="listaPessoaJuridica">Lista de Pessoa juridica</a>
 		</h3>
 	</div>
 </body>
