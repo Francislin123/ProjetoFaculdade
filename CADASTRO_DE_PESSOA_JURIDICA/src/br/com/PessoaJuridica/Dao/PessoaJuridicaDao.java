@@ -7,7 +7,14 @@ import br.com.PessoaJuridica.Modelo.PessoaJuridica;
 public interface PessoaJuridicaDao 
 {
 
-	void adiciona(PessoaJuridica pessoaJuridica);
-	public List<PessoaJuridica> getAllPessoaJuridica();
+	public List<PessoaJuridica> getAllPessoaJuridica();//Ok
+
+	PessoaJuridica buscaPorId(Integer PESSOA_JURIDICA_ID);//Ok
+
+	public void adiciona(PessoaJuridica pessoaJuridica);//Ok
+
+	public void altera(PessoaJuridica pessoaJuridica); 
+
+	public void remove(PessoaJuridica pessoaJuridica);//Ok
 
 }

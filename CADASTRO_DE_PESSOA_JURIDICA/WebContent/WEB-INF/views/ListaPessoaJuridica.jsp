@@ -9,7 +9,7 @@
 <title>Lista de Pessoas Juridicas</title>
 </head>
 <body>
-	<a href="novoCliente">Nova pessoa juridica</a>
+	<a href="novaPessoaJuridica">Nova pessoa juridica</a>
 	<br />
 	<br />
 	<table border="3">
@@ -53,18 +53,16 @@
 				<td>${pessoaJuridica.INSCRICAO_ESTADUAL}</td>
 				<td>${pessoaJuridica.INSCRICAO_MUNICIPAL}</td>
 				<td>${pessoaJuridica.EMAIL}</td>
-				<td><fmt:formatDate
-						value="${pessoaJuridica.DATA_DE_CONSTITUICAO}"
-						pattern="dd/MM/yyyy HH:mm:ss" /></td>
+				<td><fmt:formatDate value="${pessoaJuridica.DATA_DE_CONSTITUICAO}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
 				<td>${pessoaJuridica.ATIVIDADES_DESENVOLVIDAS}</td>
 				<td>${pessoaJuridica.GENERO_DA_ATIVIDADES}</td>
 				<td>${pessoaJuridica.ESPECE_DA_ATIVIDADE}</td>
 				<td>${pessoaJuridica.REPRESENTANTE_LEGAL_NOME}</td>
 				<td>${pessoaJuridica.CPF_REPRESENTANTE_LEGAL}</td>
 				<td>${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}</td>
-				<td><a
-					href="removeClientes?id=${pessoaJuridica.PESSOA_JURIDICA_ID}">Remover</a>
-					<a href="mostraClientes?id=${pessoaJuridica.PESSOA_JURIDICA_ID}">Alterar</a>
+				<td>
+				    <a href="removePessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}">Remover</a>
+					<a href="buscarPessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}">Alterar</a>
 				<td>
 			</tr>
 		</c:forEach>

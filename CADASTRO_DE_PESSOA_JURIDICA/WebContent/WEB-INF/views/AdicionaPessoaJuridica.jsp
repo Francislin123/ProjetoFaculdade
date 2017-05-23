@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -12,10 +11,8 @@
 <meta name="viewport" content="width=device-width" />
 
 <link type="text/css" rel="stylesheet" href="resources/css/us.css" />
-<script type="text/javascript" charset="utf-8"
-	src="resources/js/validarCpf.js"></script>
-<script type="text/javascript"
-	src="resources/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="resources/js/validarCpf.js"></script>
+<script type="text/javascript" src="resources/jquery/jquery-2.1.4.min.js"></script>
 
 </head>
 <body>
@@ -118,7 +115,7 @@
 			name="TELEFONE_REPRESENTANTE_LEGAL"
 			placeholder="TELEFONE_REPRESENTANTE_LEGAL"
 			value="${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}" /> <br /> <input
-			type="submit" value="Adcionar">
+			type="submit" value="Adiciona">
 
 	</form>
 </body>

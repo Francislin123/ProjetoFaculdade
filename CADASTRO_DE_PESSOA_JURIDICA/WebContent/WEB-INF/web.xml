@@ -27,6 +27,17 @@
 		<servlet-name>CADASTRO_DE_PESSOA_JURIDICA_MVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+    <!-- habilitar o suporte REST do Spring 5.0 -->
+	<filter>
+		<filter-name>httpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>httpMethodFilter</filter-name>
+		<servlet-name>CADASTRO_DE_PESSOA_JURIDICA_MVC</servlet-name>
+	</filter-mapping>
 
 	<session-config>
 		<session-timeout>10</session-timeout>
