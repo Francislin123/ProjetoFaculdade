@@ -1,65 +1,65 @@
 function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('RUA').value=("");
-            document.getElementById('BAIRRO').value=("");
-            document.getElementById('CIDADE').value=("");
-            document.getElementById('ESTADO').value=("");
-    }
+	// Limpa valores do formulário de cep.
+	document.getElementById('RUA').value = ("");
+	document.getElementById('BAIRRO').value = ("");
+	document.getElementById('CIDADE').value = ("");
+	document.getElementById('ESTADO').value = ("");
+}
 
-    function meu_callback(conteudo) {
-    	
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('RUA').value=(conteudo.logradouro);
-            document.getElementById('BAIRRO').value=(conteudo.bairro);
-            document.getElementById('CIDADE').value=(conteudo.localidade);
-            document.getElementById('ESTADO').value=(conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
+function meu_callback(conteudo) {
 
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
+	if (!("erro" in conteudo)) {
+		// Atualiza os campos com os valores.
+		document.getElementById('RUA').value = (conteudo.logradouro);
+		document.getElementById('BAIRRO').value = (conteudo.bairro);
+		document.getElementById('CIDADE').value = (conteudo.localidade);
+		document.getElementById('ESTADO').value = (conteudo.uf);
+	} // end if.
+	else {
+		// CEP não Encontrado.
+		limpa_formulário_cep();
+		alert("CEP não encontrado.");
+	}
+}
 
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
+function pesquisacep(valor) {
 
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
+	// Nova variável "cep" somente com dígitos.
+	var cep = valor.replace(/\D/g, '');
 
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
+	// Verifica se campo cep possui valor informado.
+	if (cep != "") {
 
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('RUA').value="...";
-                document.getElementById('BAIRRO').value="...";
-                document.getElementById('CIDADE').value="...";
-                document.getElementById('ESTADO').value="...";
+		// Expressão regular para validar o CEP.
+		var validacep = /^[0-9]{8}$/;
 
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
+		// Valida o formato do CEP.
+		if (validacep.test(cep)) {
 
-                //Sincroniza com o callback.
-                script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+			// Preenche os campos com "..." enquanto consulta webservice.
+			document.getElementById('RUA').value = "...";
+			document.getElementById('BAIRRO').value = "...";
+			document.getElementById('CIDADE').value = "...";
+			document.getElementById('ESTADO').value = "...";
 
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
+			// Cria um elemento javascript.
+			var script = document.createElement('script');
 
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    };
+			// Sincroniza com o callback.
+			script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+			// Insere script no documento e carrega o conteúdo.
+			document.body.appendChild(script);
+
+		} // end if.
+		else {
+			// cep é inválido.
+			limpa_formulário_cep();
+			alert("Formato de CEP inválido.");
+		}
+	} // end if.
+	else {
+		// cep sem valor, limpa formulário.
+		limpa_formulário_cep();
+	}
+};

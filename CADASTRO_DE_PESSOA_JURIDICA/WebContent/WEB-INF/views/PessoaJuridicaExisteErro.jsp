@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <H1>Pessoa Juridica ${param.NOME_FANTASIA} adicionado com sucesso!</h1>
+    <H1>Pessoa Juridica ${param.NOME_FANTASIA} ja existe!</h1>
     <br />
     <br />
     <a href="novaPessoaJuridica">Nova Pessoa Juridica</a>

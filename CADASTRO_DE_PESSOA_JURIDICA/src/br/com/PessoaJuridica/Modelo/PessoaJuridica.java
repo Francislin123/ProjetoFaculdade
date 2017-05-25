@@ -3,6 +3,7 @@ package br.com.PessoaJuridica.Modelo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,6 +26,7 @@ public class PessoaJuridica implements Serializable {
 	@NotBlank(message = "A razão social deve ser preenchida !")
 	private String RAZAO_SOCIAL;
 
+	@Column(unique = true)
 	@NotBlank(message = " Nome fantasia deve ser preenchido !")
 	private String NOME_FANTASIA;
 

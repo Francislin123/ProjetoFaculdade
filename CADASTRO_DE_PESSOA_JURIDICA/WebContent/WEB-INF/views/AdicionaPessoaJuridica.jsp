@@ -33,21 +33,21 @@
 
 		<form:errors path="pessoaJuridica.CEP" cssClass="error" />
 		<br /> <label>CEP: <input name="CEP" type="text" id="CEP"
-			value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+			value="${pessoaJuridica.CEP}" size="10" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
 
 		<form:errors path="pessoaJuridica.RUA" cssClass="error" />
-		<label>RUA: <input name="RUA" type="text" id="RUA" size="60" /></label><br />
+		<label>RUA: <input name="RUA" value="${pessoaJuridica.RUA}" type="text" id="RUA" size="60" /></label><br />
 
 		<form:errors path="pessoaJuridica.BAIRRO" cssClass="error" />
-		<label>BAIRRO: <input name="BAIRRO" type="text" id="BAIRRO"
+		<label>BAIRRO: <input name="BAIRRO" value="${pessoaJuridica.BAIRRO}" type="text" id="BAIRRO"
 			size="40" /></label><br />
 
 		<form:errors path="pessoaJuridica.CIDADE" cssClass="error" />
-		<label>CIDADE: <input name="CIDADE" type="text" id="CIDADE"
+		<label>CIDADE: <input name="CIDADE" value="${pessoaJuridica.CIDADE}" type="text" id="CIDADE"
 			size="40" /></label><br />
 
 		<form:errors path="pessoaJuridica.ESTADO" cssClass="error" />
-		<label>ESTADO: <input name="ESTADO" type="text" id="ESTADO"
+		<label>ESTADO: <input name="ESTADO" value="${pessoaJuridica.ESTADO}" type="text" id="ESTADO"
 			size="2" /></label><br />
 
 		<form:errors path="pessoaJuridica.PAIS" cssClass="error" />

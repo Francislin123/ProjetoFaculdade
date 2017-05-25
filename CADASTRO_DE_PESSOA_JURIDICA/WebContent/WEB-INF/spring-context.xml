@@ -32,8 +32,8 @@
         <property name="basename" value="messages" />
     </bean>
     
-    <!-- To validate the posted add employee form -->
-    <bean id="employeeValidator" class="br.com.PessoaJuridica.Validation.PessoaJuridicaValidaCPFansCNPJ" />
+    <!-- To validate the posted add employee form 
+    <bean id="employeeValidator" class="br.com.PessoaJuridica.Validation.PessoaJuridicaValidaCPFansCNPJ" /> -->
     
     <!-- This produces a container-managed EntityManagerFactory; 
     	 rather than application-managed EntityManagerFactory as in case of LocalEntityManagerFactoryBean-->
