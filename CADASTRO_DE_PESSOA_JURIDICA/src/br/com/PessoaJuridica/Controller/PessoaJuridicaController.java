@@ -38,6 +38,11 @@ public class PessoaJuridicaController {
 	public String erroAlteracao(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
 		return "AlterarPessoaJuridica";
 	}
+	
+	@RequestMapping(value = "/existePessoaJuridicaErro")
+	public String erroAdd(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
+		return "PessoaJuridicaExisteErro";
+	}
 
 	@RequestMapping(value = "/adicionaPessoaJuridica", method = RequestMethod.POST)
 	public String adiciona(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
@@ -53,8 +58,8 @@ public class PessoaJuridicaController {
 			    return "redirect:listaPessoaJuridica";
 			}
 		} catch (Exception e) {
-			System.out.println(e);
-			return "PessoaJuridicaExisteErro";
+			System.out.println("Teste" + e);
+			return "forward:existePessoaJuridicaErro";
 		}
 	}
 

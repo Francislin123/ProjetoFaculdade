@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,14 +21,14 @@ public class PessoaJuridica implements Serializable {
 	private static final long serialVersionUID = -833903937564847649L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer PESSOA_JURIDICA_ID;
 
 	@NotBlank(message = "A razão social deve ser preenchida !")
 	private String RAZAO_SOCIAL;
 
-	@Column(unique = true)
 	@NotBlank(message = " Nome fantasia deve ser preenchido !")
+	@Column(unique = true)
 	private String NOME_FANTASIA;
 
 	@NotBlank(message = " O campo cep deve ser preenchido !")
