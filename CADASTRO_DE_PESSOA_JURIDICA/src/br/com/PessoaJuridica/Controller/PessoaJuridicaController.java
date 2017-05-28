@@ -68,6 +68,12 @@ public class PessoaJuridicaController {
 		model.addAttribute("pessoaJuridica", dao.getAllPessoaJuridica());
 		return "ListaPessoaJuridica";
 	}
+	
+	@RequestMapping(value = "/listaPessoaJuridicaUsuario", method = RequestMethod.GET)
+	public String listaPessoaJuridicaUsuário(Model model) throws Exception {
+		model.addAttribute("pessoaJuridica", dao.getAllPessoaJuridica());
+		return "ListaPessoaJuridicaUsuario";
+	}
 
 	@RequestMapping(value = "/removePessoaJuridica", method = RequestMethod.GET)
 	public String remove(PessoaJuridica pessoaJuridica) throws ServletException {
