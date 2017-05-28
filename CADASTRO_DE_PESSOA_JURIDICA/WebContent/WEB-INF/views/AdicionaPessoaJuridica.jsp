@@ -2,10 +2,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pessoa Juridica Erro</title>
+<title>Add Pessoa Juridica</title>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width" />
@@ -17,7 +18,8 @@
 </head>
 <body>
 	<h3>Adicionar Pessoa Juridica</h3>
-
+	
+    <sec:authorize access="hasRole('ADMIN')">
 	<form action="adicionaPessoaJuridica" method="Post">
 		<br />
 
@@ -116,7 +118,7 @@
 			placeholder="TELEFONE_REPRESENTANTE_LEGAL"
 			value="${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}" /> <br /> <input
 			type="submit" value="Adiciona">
-
 	</form>
+	</sec:authorize>
 </body>
 </html>

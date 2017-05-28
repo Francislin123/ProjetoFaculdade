@@ -20,6 +20,7 @@
     <!-- This allow for dispatching requests to Controllers by registering 
     	 two beans - DefaultAnnotationHandlerMapping and AnnotationMethodHandlerAdapter -->
     <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
      
     <!-- This helps in mapping the logical view names to directly view files under a certain pre-configured directory -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
