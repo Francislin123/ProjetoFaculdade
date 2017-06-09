@@ -1,70 +1,130 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link type="text/css" rel="stylesheet"
+	href="resources/css/listaPessoaJuridica.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/listaPessoajuridicaTable.css" />
 <title>Lista de Pessoas Juridicas</title>
 </head>
 <body>
-	<a href="novaPessoaJuridica">Nova pessoa juridica</a>
-	<br />
-	<br />
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>RAZAO SOCIAL</th>
-			<th>NOME FANTASIA</th>
-			<th>CEP</th>
-			<th>RUA</th>
-			<th>BAIRRO</th>
-			<th>CIDADE</th>
-			<th>ESTADO</th>
-			<th>PAIS</th>
-			<th>TELEFONE</th>
-			<th>CNPJ</th>
-			<th>INSCRICAO ESTADUAL</th>
-			<th>INSCRICAO MUNICIPAL</th>
-			<th>EMAIL</th>
-			<th>DATA DE CONSTITUICAO</th>
-			<th>ATIVIDADES DESENVOLVIDAS</th>
-			<th>GENERO DA ATIVIDADES</th>
-			<th>ESPECE DA ATIVIDADE</th>
-			<th>REPRESENTANTE LEGAL NOME</th>
-			<th>CPF REPRESENTANTE LEGAL</th>
-			<th>TELEFONE REPRESENTANTE LEGAL</th>
-			<th>Opções</th>
-		</tr>
+	<div style="text-align: center;">
+		<div id="tabe">Lista de Cadastro de Pessoas Juridica</div>
+		<div id="tabo">
+			<a href="novaPessoaJuridica"><font color=orange>Adicionar
+					Nova Pessoa Juridica</font></a>
+		</div>
+		<br>
+
 		<c:forEach items="${pessoaJuridica}" var="pessoaJuridica">
-			<tr>
-				<td>${pessoaJuridica.PESSOA_JURIDICA_ID}</td>
-				<td>${pessoaJuridica.RAZAO_SOCIAL}</td>
-				<td>${pessoaJuridica.NOME_FANTASIA}</td>
-				<td>${pessoaJuridica.CEP}</td>
-				<td>${pessoaJuridica.RUA}</td>
-				<td>${pessoaJuridica.BAIRRO}</td>
-				<td>${pessoaJuridica.CIDADE}</td>
-				<td>${pessoaJuridica.ESTADO}</td>
-				<td>${pessoaJuridica.PAIS}</td>
-				<td>${pessoaJuridica.TELEFONE}</td>
-				<td>${pessoaJuridica.CNPJ}</td>
-				<td>${pessoaJuridica.INSCRICAO_ESTADUAL}</td>
-				<td>${pessoaJuridica.INSCRICAO_MUNICIPAL}</td>
-				<td>${pessoaJuridica.EMAIL}</td>
-				<td><fmt:formatDate value="${pessoaJuridica.DATA_DE_CONSTITUICAO}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
-				<td>${pessoaJuridica.ATIVIDADES_DESENVOLVIDAS}</td>
-				<td>${pessoaJuridica.GENERO_DA_ATIVIDADES}</td>
-				<td>${pessoaJuridica.ESPECE_DA_ATIVIDADE}</td>
-				<td>${pessoaJuridica.REPRESENTANTE_LEGAL_NOME}</td>
-				<td>${pessoaJuridica.CPF_REPRESENTANTE_LEGAL}</td>
-				<td>${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}</td>
-				<td>
-				    <a href="removePessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}">Remover</a>
-					<a href="buscarPessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}">Alterar</a>
-				<td>
-			</tr>
+
+			<table class="tg">
+
+
+				<tr>
+					<td class="tg-6bre">Razão Social</td>
+					<td class="tg-yw4l">${pessoaJuridica.RAZAO_SOCIAL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Nome Fantasia</td>
+					<td class="tg-yw4l">${pessoaJuridica.NOME_FANTASIA}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">CEP</td>
+					<td class="tg-yw4l">${pessoaJuridica.CEP}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Rua</td>
+					<td class="tg-yw4l">${pessoaJuridica.RUA}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Bairro</td>
+					<td class="tg-yw4l">${pessoaJuridica.BAIRRO}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Cidade</td>
+					<td class="tg-yw4l">${pessoaJuridica.CIDADE}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Estado</td>
+					<td class="tg-yw4l">${pessoaJuridica.ESTADO}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Pais</td>
+					<td class="tg-yw4l">${pessoaJuridica.PAIS}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Telefone</td>
+					<td class="tg-yw4l">${pessoaJuridica.TELEFONE}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">CNPJ</td>
+					<td class="tg-yw4l">${pessoaJuridica.CNPJ}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Inscrição Estadual</td>
+					<td class="tg-yw4l">${pessoaJuridica.INSCRICAO_ESTADUAL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Inscrição Municipal</td>
+					<td class="tg-yw4l">${pessoaJuridica.INSCRICAO_MUNICIPAL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">E-mail</td>
+					<td class="tg-yw4l">${pessoaJuridica.EMAIL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Data de Constituição</td>
+					<td class="tg-yw4l">
+					<fmt:formatDate	value="${pessoaJuridica.DATA_DE_CONSTITUICAO}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
+
+				</tr>
+				<tr>
+					<td class="tg-6bre">Atividade(s) Desenvolvida(s)</td>
+					<td class="tg-yw4l">${pessoaJuridica.ATIVIDADES_DESENVOLVIDAS}</td>
+				</tr>
+
+				<tr>
+				<tr>
+					<td class="tg-6bre">Genero de Atividade</td>
+					<td class="tg-yw4l">${pessoaJuridica.GENERO_DA_ATIVIDADES}</td>
+				</tr>
+
+				<tr>
+					<td class="tg-6bre">Especie da atividade</td>
+					<td class="tg-yw4l">${pessoaJuridica.ESPECE_DA_ATIVIDADE}</td>
+				</tr>
+
+				<tr>
+					<td class="tg-6bre">Representante Legal,Nome</td>
+					<td class="tg-yw4l">${pessoaJuridica.REPRESENTANTE_LEGAL_NOME}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Representante Legal,CPF</td>
+					<td class="tg-yw4l">${pessoaJuridica.CPF_REPRESENTANTE_LEGAL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Representante Legal,Telefone</td>
+					<td class="tg-yw4l">${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}</td>
+				</tr>
+				<tr>
+					<td class="tg-6bre">Opções</td>
+					<td class="tg-yw4l"><a
+						href="removePessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}"><font
+							color=red>Remover</font></a> I <a
+						href="buscarPessoaJuridica?PESSOA_JURIDICA_ID=${pessoaJuridica.PESSOA_JURIDICA_ID}"><font
+							color=blue>Alterar</font></a></td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<br>
 		</c:forEach>
-	</table>
+	</div>
 </body>
 </html>

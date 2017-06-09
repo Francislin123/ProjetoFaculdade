@@ -1,0 +1,26 @@
+body {
+	font-family: verdana, sans-serif;
+	font-size: 0.8em;
+	background-color: black;
+	color: orange;
+}
+
+nav {
+	border: 5px solid white;
+	margin: 5px;
+	padding: 10px;
+}
+
+nav {
+	background-color: #2f2f1e;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline;
+	margin: 5px;
+}

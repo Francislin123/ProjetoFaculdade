@@ -58,8 +58,7 @@ public class PessoaJuridicaController {
 			    return "redirect:listaPessoaJuridica";
 			}
 		} catch (Exception e) {
-			System.out.println("Teste" + e);
-			return "forward:existePessoaJuridicaErro";
+			   return "forward:existePessoaJuridicaErro";
 		}
 	}
 
@@ -86,7 +85,6 @@ public class PessoaJuridicaController {
 	public String mostra(Integer PESSOA_JURIDICA_ID, Model model) throws Exception {
 		PessoaJuridica pessoaJuridica = (PessoaJuridica) dao.buscaPorId(PESSOA_JURIDICA_ID);
 		model.addAttribute("pessoaJuridica", pessoaJuridica);
-		System.out.println("Pessoa Juridica id " + pessoaJuridica.getPESSOA_JURIDICA_ID());
 		return "AlterarPessoaJuridica";
 	}
 }

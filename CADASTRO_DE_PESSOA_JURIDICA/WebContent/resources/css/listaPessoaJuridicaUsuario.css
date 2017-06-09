@@ -1,0 +1,28 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: "Arabic Typesetting";
+	font-size: 18px;
+	margin-top: 1em;
+	background-image: url(black.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#tab {
+	margin-right: auto;
+	margin-left: auto;
+	border: 5px solid #a1a1a1;
+	padding: 10px 10px;
+	background: #4d4d4d;
+	width: 500px;
+	height: 30px;
+	border-radius: 29px;
+	font-size: 30px;
+	text-align: center;
+}

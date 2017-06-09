@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class PessoaJuridica implements Serializable {
@@ -52,7 +53,7 @@ public class PessoaJuridica implements Serializable {
 	@NotBlank(message = " O campo telefone deve ser preenchido !")
 	private String TELEFONE;
 
-	@org.hibernate.validator.constraints.br.CNPJ(message = " O campo cnpj deve ser preenchido !")
+	@org.hibernate.validator.constraints.br.CNPJ(message = " Cnpj invalido !")
 	private String CNPJ;
 
 	@NotBlank(message = " O campo inscrição estadual deve ser preenchido !")
@@ -67,6 +68,7 @@ public class PessoaJuridica implements Serializable {
 
 	// Não preciso valida a data
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private Date DATA_DE_CONSTITUICAO = new java.sql.Date(System.currentTimeMillis());
 
 	@NotBlank(message = " O campo atividades desenvolvidas deve ser preenchido!")

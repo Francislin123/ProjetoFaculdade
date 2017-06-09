@@ -1,0 +1,62 @@
+body {
+	color: orange;
+	background-color: #000000;
+	background-image: url(Wal.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
+	font-family: "Arabic Typesetting";
+	font-size: 30px;
+}
+
+form {
+	/* Apenas para centralizar o form na página */
+	margin: 0 auto;
+	width: 1000px;
+	/* Para ver as bordas do formulário */
+	padding: 2em;
+	border: 3px solid #CCC;
+	border-radius: 3em;
+	border-color: white;
+	background-color: #0d261a;
+	font-size: 25px;
+	color: orange;
+}
+
+form div+div {
+	margin-top: 1em;
+}
+
+label {
+	/*Para ter certeza que todas as labels tem o mesmo tamanho e estão propriamente alinhadas */
+	display: inline-block;
+	width: 340px;
+	text-align: right;
+}
+
+input, textarea {
+	/* Para certificar-se que todos os campos de texto têm as mesmas configurações de fonte. Por padrão, textareas ter uma fonte monospace*/
+	font: 1em sans-serif;
+	/* Para dar o mesmo tamanho a todos os campo de texto */
+	width: 400px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* Para harmonizar o look & feel das bordas nos campos de texto*/
+	border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+	/* Dar um pouco de destaque nos elementos ativos */
+	border-color: #a1a1a1;
+}
+
+button {
+	/* Para posicionar os botões para a mesma posição dos campos de texto */
+	width: 340px;
+	padding-left: 5px; /* mesmo tamanho que os elementos do tipo label */
+}
+
+button {
+	/* Esta margem extra representa aproximadamente o mesmo espaço que o espaço entre as labels e os seus campos de texto*/
+	margin-left: 22em;
+}

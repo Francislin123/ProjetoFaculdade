@@ -1,31 +1,45 @@
-<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
 <title>Tela inicial</title>
-<style type="text/css">
-body {
-	background-image: url('https://crunchify.com/bg.png');
-}
-</style>
+<link type="text/css" rel="stylesheet" href="resources/css/index.css" />
 </head>
 <body>
-	<br>
+
 	<div style="text-align: center">
-		<h2>
-			Bem Vindo!<br>
-		</h2>
-		<h3>
-			<sec:authorize access="hasRole('ADMIN')">
-				<a href="novaPessoaJuridica">Cadastro de Pessoa juridica </a>
-				<br>
-				<a href="listaPessoaJuridica">Lista de Pessoa juridica</a>
-			</sec:authorize>
-			<br>
-			<sec:authorize access="hasRole('USER')">
-				<a href="listaPessoaJuridicaUsuario">Lista de Pessoas juridicas para os usuário</a>
-			</sec:authorize>
-		</h3>
+		<nav>
+			<ul>
+				<sec:authorize access="hasRole('ADMIN')">
+					<a href="novaPessoaJuridica"><font color=orange>Cadastro
+							de Pessoa juridica</font></a> |
+		        <a href="listaPessoaJuridica"><font color=orange>Lista
+							de Pessoa juridica</font></a>
+				</sec:authorize>
+
+				<sec:authorize access="hasRole('USER')">
+					<a href="listaPessoaJuridicaUsuario"><font color=orange>Lista
+							de pessoas juridicas para os usuário</font></a>
+				</sec:authorize>
+			</ul>
+		</nav>
+		<div id="bem_vindo">
+			<h2>Bem Vindo ${param.username}</h2>
+		</div>
+		<sec:authorize access="hasRole('ADMIN')">
+			<div id="img-users">
+				<img style="border: 5px dashed; width: 1050px;"
+					src="resources/images/administracao.jpg">
+			</div>
+		</sec:authorize>
+		
+		<sec:authorize access="hasRole('USER')">
+			<div id="img-users">
+				<img style="border: 5px dashed; width: 900px;"
+					src="resources/images/usuario.jpg">
+			</div>
+		</sec:authorize>
 	</div>
 </body>
 </html>

@@ -3,25 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Login</title>
+<meta charset="UTF-8">
+<title>Tela de login</title>
+<link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
 </head>
 <body>
 
-	<form name='f' action='/CADASTRO_DE_PESSOA_JURIDICA/j_spring_security_check' method='POST'>
-		<table>
-			<tr>
-				<td>User:</td>
-				<td><input type='text' name='username' value=''></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='password' /></td>
-			</tr>
-			<tr>
-				<td colspan='2'><input name="submit" type="submit" value="Login" /></td>
-			</tr>
-		</table>
-	</form>
+	<div id="login">
+
+		<form action="<%=request.getContextPath()%>/login" method="POST">
+
+			<span class="fontawesome-user"></span> <input type="text" id="user"
+				placeholder="Username" name="username"> <span
+				class="fontawesome-lock"></span> <input type="password"
+				id="password" placeholder="Password" name="password"> <input
+				type="submit" value="Login">
+
+		</form>
+	</div>
 </body>
 </html>

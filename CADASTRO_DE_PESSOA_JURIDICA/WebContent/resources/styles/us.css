@@ -1,0 +1,331 @@
+.jqxgrid-cell-buttons {
+	background-color: red;
+}
+
+.jqxgrid-header-buttons {
+	float: right;
+}
+
+/*--------------------- Logos ----------------------- */
+.logo_search {
+    border: 0;
+    padding: 0px;
+    background: url("../images/search_lg.png") 0 0 no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+.logo_brasil {
+    border: 1;
+    margin-top: 5px;
+    background: url("../images/logobrasil.png") 0 0 no-repeat;
+    width: 75px;
+    height: 80px;
+}
+
+/* --------- Form Styles --------- */
+.mainContent {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	border: 0px double black;
+	background-color: #333;
+	/*//background-color: rgba(30,52,72,1);*/
+}
+
+/* ------------- Login ------------------ */
+.top-content {
+	padding: 100px;
+	padding-bottom: 100%;
+	background-color: rgba(0,0,0,1);
+}
+
+.top-content .text {
+	color: #fff;
+}
+
+.top-content .text h1 { 
+	color: #fff;
+}
+
+.top-content .description {
+	margin: 20px 0 10px 0;
+}
+
+.top-content .description p { 
+	opacity: 0.8;
+}
+
+.top-content .description a {
+	color: #fff;
+}
+.top-content .description a:hover, 
+.top-content .description a:focus { 
+	border-bottom: 1px dotted #fff;
+}
+
+.form-box {
+	margin-top: 35px;
+}
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background-color: rgba(30,52,72,1);
+	-moz-border-radius: 4px 4px 0 0; 
+	-webkit-border-radius: 4px 4px 0 0; 
+	border-radius: 4px 4px 0 0;
+	text-align: left;
+}
+
+.form-top-left {
+	float: left;
+	width: 60%;
+	padding-top: 20px;
+}
+
+.form-top-left h2 { 
+	margin-top: 0; 
+	color: #fff;
+}
+
+.form-top-right {
+	float: left;
+	width: 40%;
+	padding-top: 5px;
+	text-align: right;
+	opacity: 0.3;
+}
+
+.form-bottom {
+	padding: 25px;
+	-moz-border-radius: 0 0 4px 4px; 
+	-webkit-border-radius: 0 0 4px 4px; 
+	border-radius: 0 0 4px 4px;
+	text-align: left;
+	background: rgba(97, 95, 95, 0.59);
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form button.btn {
+	width: 100%;
+}
+
+.form-bottom form .input-error {
+	border-color: #de615e;
+}
+
+/* Error messages*/
+.jqx-window-error-message
+{
+    color: red;
+    text-align: center;
+    font-size: large;
+}
+
+/* --------- Menu Styles --------- */
+.navbar{
+	min-height: 40px;
+}
+
+.navbar-brand {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+	font-size: 15px;
+  	/*background-color: rgb(69, 65, 65);
+  	background-color: rgb(78, 76, 76);*/
+  	background-color: #333;
+	margin: 1px;    
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: rgb(95, 92, 92)
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+
+.navbar-toggle{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.navbar-custom-controls .input-group{
+	padding-top: 6px;
+	display: block;	
+}
+.navbar-custom-controls .form-control{
+	height: 29px;
+	font-size: 12px;
+}
+.navbar-custom-controls .input-group-btn{
+	width: 0;	
+}
+.navbar-custom-controls .input-group .form-control{
+	width: 90px;
+}
+.navbar-custom-controls select{
+	height: 29px;
+	border-color: #fff;
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+     	-moz-appearance: none; /* Removes Default Firefox style*/
+	background: url('../../resources/images/dropdown_arrow.png') no-repeat;
+	background-position: 100px 8px;
+	width: 120px;
+}
+.navbar-custom-controls select:hover{
+	height: 29px;
+	border-color: #fff;
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+     	-moz-appearance: none; /* Removes Default Firefox style*/
+	background: #000 url('../../resources/images/dropdown_arrow.png') no-repeat;
+	background-position: 100px 8px;
+	width: 120px;
+}
+.menuItemActive{
+    color: #00b0ff !important;
+}
+.navbar-nav.navbar-right:last-child{
+	margin-right: 20px;
+}
+body {
+    background-color: #333;
+}
+
+/*  ================================== LOADING PAGE ========================================= */
+
+/* Absolute Center CSS Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(150, 150, 150, 0.75) 1.5em 0 0 0, rgba(150, 150, 150, 0.75) 1.1em 1.1em 0 0, rgba(150, 150, 150, 0.75) 0 1.5em 0 0, rgba(150, 150, 150, 0.75) -1.1em 1.1em 0 0, rgba(150, 150, 150, 0.5) -1.5em 0 0 0, rgba(150, 150, 150, 0.5) -1.1em -1.1em 0 0, rgba(150, 150, 150, 0.75) 0 -1.5em 0 0, rgba(150, 150, 150, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(150, 150, 150, 0.75) 1.5em 0 0 0, rgba(150, 150, 150, 0.75) 1.1em 1.1em 0 0, rgba(150, 150, 150, 0.75) 0 1.5em 0 0, rgba(150, 150, 150, 0.75) -1.1em 1.1em 0 0, rgba(150, 150, 150, 0.75) -1.5em 0 0 0, rgba(150, 150, 150, 0.75) -1.1em -1.1em 0 0, rgba(150, 150, 150, 0.75) 0 -1.5em 0 0, rgba(150, 150, 150, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
