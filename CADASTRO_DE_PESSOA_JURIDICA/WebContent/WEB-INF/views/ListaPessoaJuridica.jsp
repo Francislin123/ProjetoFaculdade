@@ -6,19 +6,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link type="text/css" rel="stylesheet"
-	href="resources/css/listaPessoaJuridica.css" />
-<link type="text/css" rel="stylesheet"
-	href="resources/css/listaPessoajuridicaTable.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/listaPessoaJuridica.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/listaPessoajuridicaTable.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/pessoaJuridicaAdicionado.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/index.css" />
 <title>Lista de Pessoas Juridicas</title>
 </head>
 <body>
+	<br />
+	<nav>
+		<ul>
+			<li><a href="index.jsp"><font color=orange>Menu inicial</font></a></li>
+			<li>I</li>
+			<li><a href="novaPessoaJuridica"><font color=orange>Cadastrar um (a) nova pessoa jurídica </font></a></li>
+			<li>I</li>
+			<li><a href="listaPessoaJuridica"><font color=orange>Lista de Pessoas Juridicas</font></a></li>
+		</ul>
+	</nav>
+	<br />
+	<br />
 	<div style="text-align: center;">
 		<div id="tabe">Lista de Cadastro de Pessoas Juridica</div>
-		<div id="tabo">
-			<a href="novaPessoaJuridica"><font color=orange>Adicionar
-					Nova Pessoa Juridica</font></a>
-		</div>
 		<br>
 
 		<c:forEach items="${pessoaJuridica}" var="pessoaJuridica">
@@ -80,8 +88,9 @@
 				</tr>
 				<tr>
 					<td class="tg-6bre">Data de Constituição</td>
-					<td class="tg-yw4l">
-					<fmt:formatDate	value="${pessoaJuridica.DATA_DE_CONSTITUICAO}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
+					<td class="tg-yw4l"><fmt:formatDate
+							value="${pessoaJuridica.DATA_DE_CONSTITUICAO}"
+							pattern="dd/MM/yyyy HH:mm:ss" /></td>
 
 				</tr>
 				<tr>

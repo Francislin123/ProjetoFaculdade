@@ -7,7 +7,6 @@
 <link type="text/css" rel="stylesheet" href="resources/css/index.css" />
 </head>
 <body>
-
 	<div style="text-align: center">
 		<nav>
 			<ul>
@@ -19,27 +18,28 @@
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('USER')">
-					<a href="listaPessoaJuridicaUsuario"><font color=orange>Lista
-							de pessoas juridicas para os usuário</font></a>
+					<a href="listaPessoaJuridicaUsuario"><font color=orange>Informações básicas</font></a>
 				</sec:authorize>
 			</ul>
 		</nav>
 		<div id="bem_vindo">
 			<h2>Bem Vindo ${param.username}</h2>
 		</div>
-		<sec:authorize access="hasRole('ADMIN')">
-			<div id="img-users">
-				<img style="border: 5px dashed; width: 1050px;"
-					src="resources/images/administracao.jpg">
-			</div>
-		</sec:authorize>
-		
-		<sec:authorize access="hasRole('USER')">
-			<div id="img-users">
-				<img style="border: 5px dashed; width: 900px;"
-					src="resources/images/usuario.jpg">
-			</div>
-		</sec:authorize>
+
+
+	<sec:authorize access="hasRole('ADMIN')">
+		<div id="img-users">
+			<img style="border: 5px dashed; width: 1050px;"
+				src="resources/images/administracao.jpg">
+		</div>
+	</sec:authorize>
+
+	<sec:authorize access="hasRole('USER')">
+		<div id="img-users">
+			<img style="border: 5px dashed; width: 700px;"
+				src="resources/images/usuario.jpg">
+		</div>
+	</sec:authorize>
 	</div>
 </body>
 </html>

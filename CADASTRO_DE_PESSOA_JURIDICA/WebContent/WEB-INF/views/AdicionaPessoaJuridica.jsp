@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width" />
 
-<link type="text/css" rel="stylesheet" href="resources/css/us.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/background.css" />
 <link type="text/css" rel="stylesheet" href="resources/css/adicionaPessoaJuridica.css" />
 <script type="text/javascript" charset="utf-8" src="resources/js/validarCpf.js"></script>
 <script type="text/javascript" src="resources/jquery/jquery-2.1.4.min.js"></script>

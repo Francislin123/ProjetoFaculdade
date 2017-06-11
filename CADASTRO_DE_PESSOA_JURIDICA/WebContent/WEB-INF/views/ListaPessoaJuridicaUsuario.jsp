@@ -6,20 +6,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link type="text/css" rel="stylesheet"
-	href="resources/css/listaPessoaJuridicaUsuario.css" />
-<link type="text/css" rel="stylesheet"
-	href="resources/css/listaPessoaJuridicaUsuarioTable.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/listaPessoaJuridicaUsuario.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/listaPessoaJuridicaUsuarioTable.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/listaPessoaJuridica.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/index.css" />
 <title>Lista de Pessoas Juridicas</title>
 </head>
 <body>
+	<nav>
+		<ul>
+			<li><a href="index.jsp"><font color=orange>Menu inicial</font></a></li>
+		</ul>
+	</nav>
 	<br>
 	<br>
-	<br>
-	<br>
-	<div id="tab">Lista de Cadastro de Pessoas Juridica</div>
-	<br>
-	<br>
+	<div id="tabe">Informações básicas</div>
 	<br>
 
 	<c:forEach items="${pessoaJuridica}" var="pessoaJuridica">
