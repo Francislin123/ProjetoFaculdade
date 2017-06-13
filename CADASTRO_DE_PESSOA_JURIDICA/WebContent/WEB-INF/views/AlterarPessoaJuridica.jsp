@@ -8,11 +8,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alteração de PJ</title>
+<title>Alteração pessoas juridicas</title>
 
 <!-- Css     -->
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<link rel="icon" type="resources/images/png" href="resources/images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="resources/images/png" href="resources/images/favicon-16x16.png" sizes="16x16" />
+
 <link type="text/css" rel="stylesheet" href="resources/css/alterarPessoaJuridica.css" />
+<link type="text/css" rel="stylesheet" href="resources/css/pessoaJuridicaAdicionado.css" />
 <!-- Css fim -->
 
 <!-- JS -->
@@ -25,15 +29,34 @@
 
 </head>
 <body>
+<br />
+ <div style="text-align: center">
+	<nav>
+		<ul>
+			<li><a href="index.jsp"><font color=orange>Menu
+						inicial</font></a></li>
+			<li>|</li>
+			<li><a href="novaPessoaJuridica"><font color=orange>Cadastrar
+						um (a) nova pessoa jurídica </font></a></li>
+			<li>|</li>
+			<li><a href="listaPessoaJuridica"><font color=orange>Lista
+						de pessoas juridicas</font></a></li>
+			<li>|</li>
+			<li><a href="logout"><font color=orange>Sair</font></a></li>
+		</ul>
+	</nav>
+	</div>
+	<br />
+	<br />
 	<div style="text-align: center;">
-		<h1>Alterar PJ - ${pessoaJuridica.PESSOA_JURIDICA_ID}</h1>
+		<h1>Alterar pessoa juridica - ${pessoaJuridica.PESSOA_JURIDICA_ID}</h1>
 	</div>
 	<br />
 	<form:form action="adicionaPessoaJuridica" method="POST"
 		modelAttribute="pessoaJuridica">
 
 		<div>
-			<label for="razao social">Razão Social: </label><input type="text"
+			<label for="razao social">Razão Social:</label><input type="text"
 				name="RAZAO_SOCIAL" id="razao social" autofocus="autofocus"
 				placeholder="Digite aqui a sua Razão Social"
 				value="${pessoaJuridica.RAZAO_SOCIAL}" />
@@ -41,7 +64,7 @@
 		<br />
 
 		<div>
-			<label for="nome fantasia">Nome Fantasia: </label><input type="text"
+			<label for="nome fantasia">Nome Fantasia:</label><input type="text"
 				name="NOME_FANTASIA" id="nome fantasia" autofocus="autofocus"
 				placeholder="Digite aqui o seu Nome Fantasia"
 				value="${pessoaJuridica.NOME_FANTASIA}" />
@@ -49,57 +72,57 @@
 		<br />
 
 		<div>
-			<label for="CEP">CEP:</label> <input name="CEP" type="text" id="CEP"
+			<label for="CEP">CEP:</label><input name="CEP" type="text" id="CEP"
 				size="10" maxlength="9" value="${pessoaJuridica.CEP}"
 				onblur="pesquisacep(this.value);" />
 		</div>
 		<br />
 
 		<div>
-			<label for="rua">Rua: </label><input name="RUA" type="text" id="RUA"
+			<label for="rua">Rua:</label><input name="RUA" type="text" id="RUA"
 				size="60" value="${pessoaJuridica.RUA}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="bairro">Bairro: </label><input name="BAIRRO" type="text"
+			<label for="bairro">Bairro:</label><input name="BAIRRO" type="text"
 				id="BAIRRO" size="40" value="${pessoaJuridica.BAIRRO}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="CIDADE">Cidade: </label><input name="CIDADE" type="text"
+			<label for="CIDADE">Cidade:</label><input name="CIDADE" type="text"
 				id="CIDADE" size="40" value="${pessoaJuridica.CIDADE}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="ESTADO">Estado: </label><input name="ESTADO" type="text"
+			<label for="ESTADO">Estado:</label><input name="ESTADO" type="text"
 				id="ESTADO" size="2" value="${pessoaJuridica.ESTADO}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="PAIS">PAIS: </label><input name="PAIS" type="text"
+			<label for="PAIS">PAIS:</label><input name="PAIS" type="text"
 				id="PAIS" value="${pessoaJuridica.PAIS}">
 		</div>
 		<br />
 
 		<div>
-			<label for="telefone">Telefone: </label><input type="text"
+			<label for="telefone">Telefone:</label><input type="text"
 				name="TELEFONE" placeholder="Digite aqui seu Telefone"
 				value="${pessoaJuridica.TELEFONE}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="cnpj">CNPJ: </label><input type="text" name="CNPJ"
+			<label for="cnpj">CNPJ:</label><input type="text" name="CNPJ"
 				placeholder="Digite aqui o seu CNPJ" value="${pessoaJuridica.CNPJ}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="inscriçao estadual">Inscrição Estadual: </label><input
+			<label for="inscriçao estadual">Inscrição Estadual:</label><input
 				type="text" name="INSCRICAO_ESTADUAL"
 				placeholder="Digite aqui a sua Inscrição Estadual"
 				value="${pessoaJuridica.INSCRICAO_ESTADUAL}" />
@@ -107,7 +130,7 @@
 		<br />
 
 		<div>
-			<label for="inscriçao municipal">Inscrição Municipal: </label><input
+			<label for="inscriçao municipal">Inscrição Municipal:</label><input
 				type="text" name="INSCRICAO_MUNICIPAL"
 				placeholder="Digite aqui a sua Inscrição Municipal"
 				value="${pessoaJuridica.INSCRICAO_MUNICIPAL}" />
@@ -115,13 +138,13 @@
 		<br />
 
 		<div>
-			<label for="email">E-mail: </label><input type="email" name="EMAIL"
+			<label for="email">E-mail:</label><input type="email" name="EMAIL"
 				placeholder="email@email.com" value="${pessoaJuridica.EMAIL}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="data de construção">Data de Construção: </label> <input
+			<label for="data de construção">Data de Construção:</label><input
 				type="text" name="DATA_DE_CONSTITUICAO" id="DATA_DE_CONSTITUICAO"
 				value="<fmt:formatDate value="${pessoaJuridica.DATA_DE_CONSTITUICAO}" pattern="dd/MM/yyyy HH:mm:ss"/>" /><br />
 		</div>
@@ -129,15 +152,14 @@
 		<br />
 
 		<div>
-			<label for="atividades desenvolvidas">Atividade(s)Desenvolvida(s):
-			</label> <input type="text" name="ATIVIDADES_DESENVOLVIDAS"
+			<label for="atividades desenvolvidas">Atividade(s)Desenvolvida(s):</label><input type="text" name="ATIVIDADES_DESENVOLVIDAS"
 				placeholder="Digite a(s) Atividade(s) Desenvolvida(s)"
 				value="${pessoaJuridica.ATIVIDADES_DESENVOLVIDAS}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="genero de atividades">Genero de Atividade: </label><input
+			<label for="genero de atividades">Genero de Atividade:</label><input
 				type="text" name="GENERO_DA_ATIVIDADES"
 				placeholder="Digite o Genero de Atividade"
 				value="${pessoaJuridica.GENERO_DA_ATIVIDADES}" />
@@ -145,7 +167,7 @@
 		<br />
 
 		<div>
-			<label for="especie da atividade">Especie da atividade: </label><input
+			<label for="especie da atividade">Especie da atividade:</label><input
 				type="text" name="ESPECE_DA_ATIVIDADE"
 				placeholder="Digite a Especie de Atividade"
 				value="${pessoaJuridica.ESPECE_DA_ATIVIDADE}" />
@@ -153,24 +175,21 @@
 		<br />
 
 		<div>
-			<label for="representante legal nome">Representante
-				Legal,Nome: </label><input type="text" name="REPRESENTANTE_LEGAL_NOME"
+			<label for="representante legal nome">Representante Legal,Nome:</label><input type="text" name="REPRESENTANTE_LEGAL_NOME"
 				placeholder="Digite o nome do Representante Legal"
 				value="${pessoaJuridica.REPRESENTANTE_LEGAL_NOME}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="cpf representante legal nome">Representante
-				Legal,CPF: </label> <input type="text" name="CPF_REPRESENTANTE_LEGAL"
+			<label for="cpf representante legal nome">Representante	Legal,CPF:</label><input type="text" name="CPF_REPRESENTANTE_LEGAL"
 				placeholder="Digite o CPF do Representante Legal"
 				value="${pessoaJuridica.CPF_REPRESENTANTE_LEGAL}" />
 		</div>
 		<br />
 
 		<div>
-			<label for="telefone representante legal nome">Representante
-				Legal,Telefone: </label><input type="text"
+			<label for="telefone representante legal nome">Representante Legal,Telefone:</label><input type="text"
 				name="TELEFONE_REPRESENTANTE_LEGAL"
 				placeholder="Digite o CPF do Representante Legal"
 				value="${pessoaJuridica.TELEFONE_REPRESENTANTE_LEGAL}" />

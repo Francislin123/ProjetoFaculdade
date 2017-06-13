@@ -1,12 +1,11 @@
 body {
-	background-color: black;
-	color: white;
+	color: orange;
+	background-color: #000000;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
 	font-family: "Arabic Typesetting";
 	font-size: 18px;
-	margin-top: 1em;
-	background-image: url(black.jpg);
-	background-repeat: repeat;
-	background-attachment: fixed;
 }
 
 table {

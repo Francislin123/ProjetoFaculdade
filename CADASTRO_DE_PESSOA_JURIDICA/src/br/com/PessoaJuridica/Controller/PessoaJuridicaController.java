@@ -1,6 +1,7 @@
 package br.com.PessoaJuridica.Controller;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,11 @@ public class PessoaJuridicaController {
 		this.dao = dao;
 	}
 
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout() {
+		return "Apresentacao";
+	}
+	
 	@RequestMapping(value = "/novaPessoaJuridica", method = RequestMethod.GET)
 	public String form() {
 		System.out.println("Redirecionando para a pagina de cadastro");
@@ -86,5 +92,11 @@ public class PessoaJuridicaController {
 		PessoaJuridica pessoaJuridica = (PessoaJuridica) dao.buscaPorId(PESSOA_JURIDICA_ID);
 		model.addAttribute("pessoaJuridica", pessoaJuridica);
 		return "AlterarPessoaJuridica";
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:logout";
 	}
 }

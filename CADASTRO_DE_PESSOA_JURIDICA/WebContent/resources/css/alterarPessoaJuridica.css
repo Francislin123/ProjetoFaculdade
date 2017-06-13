@@ -1,12 +1,11 @@
 body {
 	color: orange;
 	background-color: #000000;
-	background-image: url(Wal.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: right bottom;
 	font-family: "Arabic Typesetting";
-	font-size: 30px;
+	font-size: 18px;
 }
 
 form {
@@ -19,7 +18,7 @@ form {
 	border-radius: 3em;
 	border-color: white;
 	background-color: #0d261a;
-	font-size: 25px;
+	font-size: 20px;
 	color: orange;
 }
 

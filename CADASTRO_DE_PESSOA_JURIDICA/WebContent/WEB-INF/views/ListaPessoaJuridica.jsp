@@ -6,29 +6,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link type="text/css" rel="stylesheet" href="resources/css/listaPessoaJuridica.css" />
-<link type="text/css" rel="stylesheet" href="resources/css/listaPessoajuridicaTable.css" />
-<link type="text/css" rel="stylesheet" href="resources/css/pessoaJuridicaAdicionado.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/listaPessoaJuridica.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/listaPessoajuridicaTable.css" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/pessoaJuridicaAdicionado.css" />
 <link type="text/css" rel="stylesheet" href="resources/css/index.css" />
+<link rel="icon" type="resources/images/png"
+	href="resources/images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="resources/images/png"
+	href="resources/images/favicon-16x16.png" sizes="16x16" />
 <title>Lista de Pessoas Juridicas</title>
 </head>
 <body>
 	<br />
+	 <div style="text-align: center">
 	<nav>
 		<ul>
 			<li><a href="index.jsp"><font color=orange>Menu inicial</font></a></li>
-			<li>I</li>
+			<li>|</li>
 			<li><a href="novaPessoaJuridica"><font color=orange>Cadastrar um (a) nova pessoa jurídica </font></a></li>
-			<li>I</li>
-			<li><a href="listaPessoaJuridica"><font color=orange>Lista de Pessoas Juridicas</font></a></li>
+			<li>|</li>
+			<li><a href="logout"><font color=orange>Sair</font></a></li>
 		</ul>
 	</nav>
-	<br />
+		</div>
 	<br />
 	<div style="text-align: center;">
-		<div id="tabe">Lista de Cadastro de Pessoas Juridica</div>
+		<div id="tabe">Pessoas Juridicas</div>
 		<br>
-
 		<c:forEach items="${pessoaJuridica}" var="pessoaJuridica">
 
 			<table class="tg">

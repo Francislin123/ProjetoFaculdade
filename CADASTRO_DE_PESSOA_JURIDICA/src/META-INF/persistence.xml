@@ -6,7 +6,6 @@
 	<persistence-unit name="springJpa" transaction-type="RESOURCE_LOCAL">
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-
 		<class>br.com.PessoaJuridica.Modelo.PessoaJuridica</class>
 		
 	</persistence-unit>

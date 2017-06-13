@@ -16,5 +16,6 @@ public interface PessoaJuridicaDao
 	public void altera(PessoaJuridica pessoaJuridica);
 
 	public void remove(PessoaJuridica pessoaJuridica);
+	
 
 }

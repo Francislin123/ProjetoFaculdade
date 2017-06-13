@@ -1,18 +1,18 @@
 body {
 	font-family: verdana, sans-serif;
-	font-size: 0.8em;
-	background-color: black;
-	color: orange;
+	font-size:12px;
+	background-color: #171616;
+	color: rgb(245, 242, 242);
 }
 
 nav {
-	border: 5px solid white;
+	border: 5px solid #efe7e7;
 	margin: 5px;
-	padding: 10px;
+	padding: 4px;
 }
 
 nav {
-	background-color: #2f2f1e;
+	background-color: #0c0c0c;
 }
 
 nav ul {
