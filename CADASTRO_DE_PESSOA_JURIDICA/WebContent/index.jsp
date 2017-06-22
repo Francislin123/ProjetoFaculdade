@@ -16,18 +16,15 @@
 		<nav>
 			<ul>
 				<sec:authorize access="hasRole('ADMIN')">
-					<a href="novaPessoaJuridica"><font color=orange>Cadastrar
-							um (a) nova pessoa jurídica</font></a> 
+					<a href="novaPessoaJuridica"><font color=orange>Cadastrar um (a) nova pessoa jurídica</font></a> 
 				|
-		        <a href="listaPessoaJuridica"><font color=orange>Lista
-							de pessoa juridica</font></a>
+		        <a href="listaPessoaJuridica"><font color=orange>Lista de pessoa juridica</font></a>
 		        |
 		        <a href="logout"><font color=orange>Sair</font></a>
 				</sec:authorize>
 
 				<sec:authorize access="hasRole('USER')">
-					<a href="listaPessoaJuridicaUsuario"><font color=orange>Informações
-							básicas</font></a>
+					<a href="listaPessoaJuridicaUsuario"><font color=orange>Informações	básicas</font></a>
 					|
 		            <a href="logout"><font color=orange>Sair</font></a>
 				</sec:authorize>

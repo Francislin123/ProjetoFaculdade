@@ -181,7 +181,7 @@ center
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<h3>Para logar no sistema entre com seu login e senha !</h3>
+					<h3><font color=white>Para logar no sistema entre com seu login e senha !</font></h3>
 					<form class="signup-form"
 						action="<%=request.getContextPath()%>/login" method="POST">
 						<div class="form-input-group">

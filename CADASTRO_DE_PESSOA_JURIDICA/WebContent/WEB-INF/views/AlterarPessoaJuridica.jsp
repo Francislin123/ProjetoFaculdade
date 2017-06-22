@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
@@ -114,7 +114,7 @@
 				value="${pessoaJuridica.TELEFONE}" />
 		</div>
 		<br />
-
+		
 		<div>
 			<label for="cnpj">CNPJ:</label><input type="text" name="CNPJ"
 				placeholder="Digite aqui o seu CNPJ" value="${pessoaJuridica.CNPJ}" />
@@ -180,7 +180,7 @@
 				value="${pessoaJuridica.REPRESENTANTE_LEGAL_NOME}" />
 		</div>
 		<br />
-
+		
 		<div>
 			<label for="cpf representante legal nome">Representante	Legal,CPF:</label><input type="text" name="CPF_REPRESENTANTE_LEGAL"
 				placeholder="Digite o CPF do Representante Legal"

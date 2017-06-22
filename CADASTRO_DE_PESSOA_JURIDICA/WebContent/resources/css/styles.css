@@ -99,7 +99,7 @@ h5 {
 }
 
 section.intro, section.features-extra, section.sign-up {
-	background: #fff;
+	background: #000000;
 }
 
 section.features, section.blog-intro, section.blog {
@@ -1045,7 +1045,7 @@ Sign up form
 	content: "";
 	height: 30px;
 	width: 1px;
-	border-right: solid 1px #E6E9EA;
+	border-right: solid 1px #0e1113;
 	position: absolute;
 	top: 50%;
 	left: 30px;

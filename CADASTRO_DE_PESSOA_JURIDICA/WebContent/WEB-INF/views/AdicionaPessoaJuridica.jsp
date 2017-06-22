@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,7 +114,7 @@
 		</div>
 		<br />
 
-		<form:errors path="pessoaJuridica.CNPJ" cssClass="error" />
+		<form:errors style="text-align: center;" path="pessoaJuridica.CNPJ" cssClass="error" />
 		<div>
 			<label for="cnpj">CNPJ:</label><input type="text" name=CNPJ required
 				placeholder="Digite o CNPJ" value="${pessoaJuridica.CNPJ}" />
@@ -190,8 +188,7 @@
 		</div>
 		<br />
 
-		<form:errors path="pessoaJuridica.CPF_REPRESENTANTE_LEGAL"
-			cssClass="error" />
+		<form:errors style="text-align: center;" path="pessoaJuridica.CPF_REPRESENTANTE_LEGAL" cssClass="error" />
 		<div>
 			<label for="cpf representante legal nome">Representante
 				Legal,CPF:</label><input type="text" name="CPF_REPRESENTANTE_LEGAL"
