@@ -37,11 +37,11 @@ public class JpaPessoaJuridicaDao implements PessoaJuridicaDao {
 	}
 
 	public void remove(PessoaJuridica pessoaJuridica) {
-		PessoaJuridica pessoaJuridicaRemover = buscaPorId(pessoaJuridica.getPESSOA_JURIDICA_ID());
+		PessoaJuridica pessoaJuridicaRemover = buscaPorId(pessoaJuridica.getId());
 		this.manager.remove(pessoaJuridicaRemover);
 	}
 
-	public PessoaJuridica buscaPorId(Integer PESSOA_JURIDICA_ID) {
-		return manager.find(PessoaJuridica.class, PESSOA_JURIDICA_ID);
+	public PessoaJuridica buscaPorId(Integer id) {
+		return manager.find(PessoaJuridica.class, id);
 	}
 }

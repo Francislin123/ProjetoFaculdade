@@ -3,303 +3,314 @@ package br.com.PessoaJuridica.Modelo;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class PessoaJuridica implements Serializable {
 
-	private static final long serialVersionUID = -833903937564847649L;
+    private static final long serialVersionUID = -833903937564847649L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer PESSOA_JURIDICA_ID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-	@NotBlank(message = "A raz„o social deve ser preenchida !")
-	private String RAZAO_SOCIAL;
+    @NotBlank(message = "A raz√£o social deve ser preenchida!")
+    private String razaoSocial;
 
-	@NotBlank(message = " Nome fantasia deve ser preenchido !")
-	@Column(unique = true)
-	private String NOME_FANTASIA;
+    @NotBlank(message = "O nome fantasia deve ser preenchido!")
+    @Column(unique = true)
+    private String nomeFantasia;
 
-	@NotBlank(message = " O campo cep deve ser preenchido !")
-	private String CEP;
+    @NotBlank(message = "O campo CEP deve ser preenchido!")
+    private String cep;
 
-	@NotBlank(message = " O campo rua deve ser preenchido !")
-	private String RUA;
+    @NotBlank(message = "O campo rua deve ser preenchido!")
+    private String rua;
 
-	@NotBlank(message = " O campo bairro deve ser preenchido !")
-	private String BAIRRO;
+    @NotBlank(message = "O campo bairro deve ser preenchido!")
+    private String bairro;
 
-	@NotBlank(message = " O campo cidade deve ser preenchido !")
-	private String CIDADE;
+    @NotBlank(message = "O campo cidade deve ser preenchido!")
+    private String cidade;
 
-	@NotBlank(message = " O campo estado deve ser preenchido !")
-	private String ESTADO;
+    @NotBlank(message = "O campo estado deve ser preenchido!")
+    private String estado;
 
-	@NotBlank(message = " O campo pais deve ser preenchido !")
-	private String PAIS;
+    @NotBlank(message = "O campo pa√≠s deve ser preenchido!")
+    private String pais;
 
-	@NotBlank(message = " O campo telefone deve ser preenchido !")
-	private String TELEFONE;
+    @NotBlank(message = "O campo telefone deve ser preenchido!")
+    private String telefone;
 
-	@org.hibernate.validator.constraints.br.CNPJ(message = " Cnpj invalido !")
-	private String CNPJ;
+    @CNPJ(message = "CNPJ inv√°lido!")
+    private String cnpj;
 
-	@NotBlank(message = " O campo inscriÁ„o estadual deve ser preenchido !")
-	private String INSCRICAO_ESTADUAL;
+    @NotBlank(message = "O campo inscri√ß√£o estadual deve ser preenchido!")
+    private String inscricaoEstadual;
 
-	@NotBlank(message = " O campo inscriÁao municipal deve ser preenchido !")
-	private String INSCRICAO_MUNICIPAL;
+    @NotBlank(message = "O campo inscri√ß√£o municipal deve ser preenchido!")
+    private String inscricaoMunicipal;
 
-	@Email(message = " O campo e-mail deve ser preenchido !")
-	@NotBlank(message = " O campo e-mail deve ser preenchido !")
-	private String EMAIL;
+    @Email(message = "E-mail inv√°lido!")
+    @NotBlank(message = "O campo e-mail deve ser preenchido!")
+    private String email;
 
-	// N„o preciso valida a data
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-	private Date DATA_DE_CONSTITUICAO = new java.sql.Date(System.currentTimeMillis());
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    private Date dataConstituicao = new java.sql.Date(System.currentTimeMillis());
 
-	@NotBlank(message = " O campo atividades desenvolvidas deve ser preenchido!")
-	private String ATIVIDADES_DESENVOLVIDAS;
+    @NotBlank(message = "O campo atividades desenvolvidas deve ser preenchido!")
+    private String atividadesDesenvolvidas;
 
-	@NotBlank(message = " O campo genero de atividade deve ser preenchido !")
-	private String GENERO_DA_ATIVIDADES;
+    @NotBlank(message = "O campo g√™nero da atividade deve ser preenchido!")
+    private String generoAtividade;
 
-	@NotBlank(message = " O campo espece da atividade deve ser preenchido !")
-	private String ESPECE_DA_ATIVIDADE;
+    @NotBlank(message = "O campo esp√©cie da atividade deve ser preenchido!")
+    private String especieAtividade;
 
-	@NotBlank(message = " O campo representante legal deve ser preenchido !")
-	private String REPRESENTANTE_LEGAL_NOME;
+    @NotBlank(message = "O campo nome do representante legal deve ser preenchido!")
+    private String representanteLegalNome;
 
-	@CPF(message = " CPF invalido - (Digite apenas numeros)")
-	private String CPF_REPRESENTANTE_LEGAL;
+    @CPF(message = "CPF do representante inv√°lido!")
+    private String cpfRepresentanteLegal;
 
-	@NotBlank(message = " O campo representante legal telefone deve ser preenchido !")
-	private String TELEFONE_REPRESENTANTE_LEGAL;
+    @NotBlank(message = "O telefone do representante legal deve ser preenchido!")
+    private String telefoneRepresentanteLegal;
 
-	public PessoaJuridica() {
+    public PessoaJuridica() {
+    	
+    }
+    
+    public PessoaJuridica(
+    	    Integer id,
+    	    String razaoSocial,
+    	    String nomeFantasia,
+    	    String cep,
+    	    String rua,
+    	    String bairro,
+    	    String cidade,
+    	    String estado,
+    	    String pais,
+    	    String telefone,
+    	    String cnpj,
+    	    String inscricaoEstadual,
+    	    String inscricaoMunicipal,
+    	    String email,
+    	    Date dataConstituicao,
+    	    String atividadesDesenvolvidas,
+    	    String generoAtividade,
+    	    String especieAtividade,
+    	    String representanteLegalNome,
+    	    String cpfRepresentanteLegal,
+    	    String telefoneRepresentanteLegal
+    	) {
+    	    this.id = id;
+    	    this.razaoSocial = razaoSocial;
+    	    this.nomeFantasia = nomeFantasia;
+    	    this.cep = cep;
+    	    this.rua = rua;
+    	    this.bairro = bairro;
+    	    this.cidade = cidade;
+    	    this.estado = estado;
+    	    this.pais = pais;
+    	    this.telefone = telefone;
+    	    this.cnpj = cnpj;
+    	    this.inscricaoEstadual = inscricaoEstadual;
+    	    this.inscricaoMunicipal = inscricaoMunicipal;
+    	    this.email = email;
+    	    this.dataConstituicao = dataConstituicao;
+    	    this.atividadesDesenvolvidas = atividadesDesenvolvidas;
+    	    this.generoAtividade = generoAtividade;
+    	    this.especieAtividade = especieAtividade;
+    	    this.representanteLegalNome = representanteLegalNome;
+    	    this.cpfRepresentanteLegal = cpfRepresentanteLegal;
+    	    this.telefoneRepresentanteLegal = telefoneRepresentanteLegal;
+    	}
+
+    
+    public Integer getId() {
+		return id;
 	}
 
-	public PessoaJuridica(Integer PESSOA_JURIDICA_ID, String RAZAO_SOCIAL, String NOME_FANTASIA, String CEP, String RUA,
-			String BAIRRO, String CIDADE, String ESTADO, String PAIS, String TELEFONE, String CNPJ,
-			String INSCRICAO_ESTADUAL, String INSCRICAO_MUNICIPAL, String EMAIL, Date DATA_DE_CONSTITUICAO,
-			String ATIVIDADES_DESENVOLVIDAS, String GENERO_DA_ATIVIDADES, String ESPECE_DA_ATIVIDADE,
-			String REPRESENTANTE_LEGAL_NOME, String CPF_REPRESENTANTE_LEGAL, String TELEFONE_REPRESENTANTE_LEGAL) {
-		super();
-		this.PESSOA_JURIDICA_ID = PESSOA_JURIDICA_ID;
-		this.RAZAO_SOCIAL = RAZAO_SOCIAL;
-		this.NOME_FANTASIA = NOME_FANTASIA;
-		// EndereÁo
-		this.CEP = CEP;
-		this.RUA = RUA;
-		this.BAIRRO = BAIRRO;
-		this.CIDADE = CIDADE;
-		this.ESTADO = ESTADO;
-		this.PAIS = PAIS;
-		// ------------------ //
-		this.TELEFONE = TELEFONE;
-		this.CNPJ = CNPJ;
-		this.INSCRICAO_ESTADUAL = INSCRICAO_ESTADUAL;
-		this.INSCRICAO_MUNICIPAL = INSCRICAO_MUNICIPAL;
-		this.EMAIL = EMAIL;
-		this.DATA_DE_CONSTITUICAO = DATA_DE_CONSTITUICAO;
-		this.ATIVIDADES_DESENVOLVIDAS = ATIVIDADES_DESENVOLVIDAS;
-		this.GENERO_DA_ATIVIDADES = GENERO_DA_ATIVIDADES;
-		this.ESPECE_DA_ATIVIDADE = ESPECE_DA_ATIVIDADE;
-		this.REPRESENTANTE_LEGAL_NOME = REPRESENTANTE_LEGAL_NOME;
-		this.REPRESENTANTE_LEGAL_NOME = CPF_REPRESENTANTE_LEGAL;
-		this.TELEFONE_REPRESENTANTE_LEGAL = TELEFONE_REPRESENTANTE_LEGAL;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public Integer getPESSOA_JURIDICA_ID() {
-		return PESSOA_JURIDICA_ID;
+	public String getRazaoSocial() {
+		return razaoSocial;
 	}
 
-	public void setPESSOA_JURIDICA_ID(Integer pESSOA_JURIDICA_ID) {
-		PESSOA_JURIDICA_ID = pESSOA_JURIDICA_ID;
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
 	}
 
-	public String getRAZAO_SOCIAL() {
-		return RAZAO_SOCIAL;
+	public String getNomeFantasia() {
+		return nomeFantasia;
 	}
 
-	public void setRAZAO_SOCIAL(String rAZAO_SOCIAL) {
-		RAZAO_SOCIAL = rAZAO_SOCIAL;
+	public void setNomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
 	}
 
-	public String getNOME_FANTASIA() {
-		return NOME_FANTASIA;
+	public String getCep() {
+		return cep;
 	}
 
-	public void setNOME_FANTASIA(String nOME_FANTASIA) {
-		NOME_FANTASIA = nOME_FANTASIA;
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
-	public String getBAIRRO() {
-		return BAIRRO;
+	public String getRua() {
+		return rua;
 	}
 
-	public void setBAIRRO(String bAIRRO) {
-		BAIRRO = bAIRRO;
+	public void setRua(String rua) {
+		this.rua = rua;
 	}
 
-	public String getCIDADE() {
-		return CIDADE;
+	public String getBairro() {
+		return bairro;
 	}
 
-	public void setCIDADE(String cIDADE) {
-		CIDADE = cIDADE;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
-	public String getESTADO() {
-		return ESTADO;
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setESTADO(String eSTADO) {
-		ESTADO = eSTADO;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
-	public String getPAIS() {
-		return PAIS;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setPAIS(String pAIS) {
-		PAIS = pAIS;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
-	public String getCEP() {
-		return CEP;
+	public String getPais() {
+		return pais;
 	}
 
-	public void setCEP(String cEP) {
-		CEP = cEP;
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
-	public String getTELEFONE() {
-		return TELEFONE;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setTELEFONE(String tELEFONE) {
-		TELEFONE = tELEFONE;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
-	public String getCNPJ() {
-		return CNPJ;
+	public String getCnpj() {
+		return cnpj;
 	}
 
-	public void setCNPJ(String cNPJ) {
-		CNPJ = cNPJ;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
-	public String getINSCRICAO_ESTADUAL() {
-		return INSCRICAO_ESTADUAL;
+	public String getInscricaoEstadual() {
+		return inscricaoEstadual;
 	}
 
-	public void setINSCRICAO_ESTADUAL(String iNSCRICAO_ESTADUAL) {
-		INSCRICAO_ESTADUAL = iNSCRICAO_ESTADUAL;
+	public void setInscricaoEstadual(String inscricaoEstadual) {
+		this.inscricaoEstadual = inscricaoEstadual;
 	}
 
-	public String getINSCRICAO_MUNICIPAL() {
-		return INSCRICAO_MUNICIPAL;
+	public String getInscricaoMunicipal() {
+		return inscricaoMunicipal;
 	}
 
-	public void setINSCRICAO_MUNICIPAL(String iNSCRICAO_MUNICIPAL) {
-		INSCRICAO_MUNICIPAL = iNSCRICAO_MUNICIPAL;
+	public void setInscricaoMunicipal(String inscricaoMunicipal) {
+		this.inscricaoMunicipal = inscricaoMunicipal;
 	}
 
-	public String getEMAIL() {
-		return EMAIL;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEMAIL(String eMAIL) {
-		EMAIL = eMAIL;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public Date getDATA_DE_CONSTITUICAO() {
-		return DATA_DE_CONSTITUICAO;
+	public Date getDataConstituicao() {
+		return dataConstituicao;
 	}
 
-	public void setDATA_DE_CONSTITUICAO(Date dATA_DE_CONSTITUICAO) {
-		DATA_DE_CONSTITUICAO = dATA_DE_CONSTITUICAO;
+	public void setDataConstituicao(Date dataConstituicao) {
+		this.dataConstituicao = dataConstituicao;
 	}
 
-	public String getATIVIDADES_DESENVOLVIDAS() {
-		return ATIVIDADES_DESENVOLVIDAS;
+	public String getAtividadesDesenvolvidas() {
+		return atividadesDesenvolvidas;
 	}
 
-	public void setATIVIDADES_DESENVOLVIDAS(String aTIVIDADES_DESENVOLVIDAS) {
-		ATIVIDADES_DESENVOLVIDAS = aTIVIDADES_DESENVOLVIDAS;
+	public void setAtividadesDesenvolvidas(String atividadesDesenvolvidas) {
+		this.atividadesDesenvolvidas = atividadesDesenvolvidas;
 	}
 
-	public String getGENERO_DA_ATIVIDADES() {
-		return GENERO_DA_ATIVIDADES;
+	public String getGeneroAtividade() {
+		return generoAtividade;
 	}
 
-	public void setGENERO_DA_ATIVIDADES(String gENERO_DA_ATIVIDADES) {
-		GENERO_DA_ATIVIDADES = gENERO_DA_ATIVIDADES;
+	public void setGeneroAtividade(String generoAtividade) {
+		this.generoAtividade = generoAtividade;
 	}
 
-	public String getESPECE_DA_ATIVIDADE() {
-		return ESPECE_DA_ATIVIDADE;
+	public String getEspecieAtividade() {
+		return especieAtividade;
 	}
 
-	public void setESPECE_DA_ATIVIDADE(String eSPECE_DA_ATIVIDADE) {
-		ESPECE_DA_ATIVIDADE = eSPECE_DA_ATIVIDADE;
+	public void setEspecieAtividade(String especieAtividade) {
+		this.especieAtividade = especieAtividade;
 	}
 
-	public String getREPRESENTANTE_LEGAL_NOME() {
-		return REPRESENTANTE_LEGAL_NOME;
+	public String getRepresentanteLegalNome() {
+		return representanteLegalNome;
 	}
 
-	public void setREPRESENTANTE_LEGAL_NOME(String rEPRESENTANTE_LEGAL_NOME) {
-		REPRESENTANTE_LEGAL_NOME = rEPRESENTANTE_LEGAL_NOME;
+	public void setRepresentanteLegalNome(String representanteLegalNome) {
+		this.representanteLegalNome = representanteLegalNome;
 	}
 
-	public String getCPF_REPRESENTANTE_LEGAL() {
-		return CPF_REPRESENTANTE_LEGAL;
+	public String getCpfRepresentanteLegal() {
+		return cpfRepresentanteLegal;
 	}
 
-	public void setCPF_REPRESENTANTE_LEGAL(String cPF_REPRESENTANTE_LEGAL) {
-		CPF_REPRESENTANTE_LEGAL = cPF_REPRESENTANTE_LEGAL;
+	public void setCpfRepresentanteLegal(String cpfRepresentanteLegal) {
+		this.cpfRepresentanteLegal = cpfRepresentanteLegal;
 	}
 
-	public String getTELEFONE_REPRESENTANTE_LEGAL() {
-		return TELEFONE_REPRESENTANTE_LEGAL;
+	public String getTelefoneRepresentanteLegal() {
+		return telefoneRepresentanteLegal;
 	}
 
-	public void setTELEFONE_REPRESENTANTE_LEGAL(String tELEFONE_REPRESENTANTE_LEGAL) {
-		TELEFONE_REPRESENTANTE_LEGAL = tELEFONE_REPRESENTANTE_LEGAL;
-	}
-
-	public String getRUA() {
-		return RUA;
-	}
-
-	public void setRUA(String Rua) {
-		RUA = Rua;
+	public void setTelefoneRepresentanteLegal(String telefoneRepresentanteLegal) {
+		this.telefoneRepresentanteLegal = telefoneRepresentanteLegal;
 	}
 
 	@Override
-	public String toString() {
-		return "PessoaJuridica [PESSOA_JURIDICA_ID=" + PESSOA_JURIDICA_ID + ", RAZAO_SOCIAL=" + RAZAO_SOCIAL
-				+ ", NOME_FANTASIA=" + NOME_FANTASIA + ", BAIRRO=" + BAIRRO + ", CIDADE=" + CIDADE + ", ESTADO="
-				+ ESTADO + ", PAIS=" + PAIS + ", CEP=" + CEP + ", TELEFONE=" + TELEFONE + ", CNPJ=" + CNPJ
-				+ ", INSCRICAO_ESTADUAL=" + INSCRICAO_ESTADUAL + ", INSCRICAO_MUNICIPAL=" + INSCRICAO_MUNICIPAL
-				+ ", EMAIL=" + EMAIL + ", ATIVIDADES_DESENVOLVIDAS=" + ATIVIDADES_DESENVOLVIDAS
-				+ ", GENERO_DA_ATIVIDADES=" + GENERO_DA_ATIVIDADES + ", ESPECE_DA_ATIVIDADE=" + ESPECE_DA_ATIVIDADE
-				+ ", REPRESENTANTE_LEGAL_NOME=" + REPRESENTANTE_LEGAL_NOME + ", CPF_REPRESENTANTE_LEGAL="
-				+ CPF_REPRESENTANTE_LEGAL + ", TELEFONE_REPRESENTANTE_LEGAL=" + TELEFONE_REPRESENTANTE_LEGAL + "]";
-	}
+    public String toString() {
+        return "PessoaJuridica{" +
+                "id=" + id +
+                ", razaoSocial='" + razaoSocial + '\'' +
+                ", nomeFantasia='" + nomeFantasia + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                '}';
+    }
 }

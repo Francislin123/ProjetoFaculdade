@@ -56,7 +56,7 @@ public class PessoaJuridicaController {
 			if (result.hasFieldErrors()) {
 				return "forward:novaPessoaJuridicaErro";
 			}
-			if (pessoaJuridica.getPESSOA_JURIDICA_ID() == null) {
+			if (pessoaJuridica.getId() == null) {
 				this.dao.adiciona(pessoaJuridica);
 				return "PessoaJuridicaAdicionado";
 			}else{
@@ -75,7 +75,7 @@ public class PessoaJuridicaController {
 	}
 	
 	@RequestMapping(value = "/listaPessoaJuridicaUsuario", method = RequestMethod.GET)
-	public String listaPessoaJuridicaUsuário(Model model) throws Exception {
+	public String listaPessoaJuridicaUsuario(Model model) throws Exception {
 		model.addAttribute("pessoaJuridica", dao.getAllPessoaJuridica());
 		return "ListaPessoaJuridicaUsuario";
 	}
