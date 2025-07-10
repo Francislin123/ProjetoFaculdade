@@ -22,6 +22,7 @@
 			<user-service>
 				<user name="francislin" password="76644618" authorities="ROLE_ADMIN" />
 				<user name="francis" password="76644618" authorities="ROLE_USER" />
+				<user name="brunamante" password="Senha123" authorities="ROLE_ADMIN" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>

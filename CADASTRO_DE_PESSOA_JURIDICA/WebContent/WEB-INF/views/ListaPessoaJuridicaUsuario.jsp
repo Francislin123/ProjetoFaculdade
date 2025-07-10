@@ -40,68 +40,68 @@
 		<table class="tg">
 			<tr>
 				<td class="tg-6bre">CEP</td>
-				<td class="tg-yw4l">${pessoaJuridica.CEP}</td>
+				<td class="tg-yw4l">${pessoaJuridica.cep}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Rua</td>
-				<td class="tg-yw4l">${pessoaJuridica.RUA}</td>
+				<td class="tg-yw4l">${pessoaJuridica.rua}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Bairro</td>
-				<td class="tg-yw4l">${pessoaJuridica.BAIRRO}</td>
+				<td class="tg-yw4l">${pessoaJuridica.bairro}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Cidade</td>
-				<td class="tg-yw4l">${pessoaJuridica.CIDADE}</td>
+				<td class="tg-yw4l">${pessoaJuridica.cidade}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Estado</td>
-				<td class="tg-yw4l">${pessoaJuridica.ESTADO}</td>
+				<td class="tg-yw4l">${pessoaJuridica.estado}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Pais</td>
-				<td class="tg-yw4l">${pessoaJuridica.PAIS}</td>
+				<td class="tg-yw4l">${pessoaJuridica.pais}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Telefone</td>
-				<td class="tg-yw4l">${pessoaJuridica.TELEFONE}</td>
+				<td class="tg-yw4l">${pessoaJuridica.telefone}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">CNPJ</td>
-				<td class="tg-yw4l">${pessoaJuridica.CNPJ}</td>
+				<td class="tg-yw4l">${pessoaJuridica.cnpj}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Inscrição Estadual</td>
-				<td class="tg-yw4l">${pessoaJuridica.INSCRICAO_ESTADUAL}</td>
+				<td class="tg-yw4l">${pessoaJuridica.inscricaoEstadual}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Inscrição Municipal</td>
-				<td class="tg-yw4l">${pessoaJuridica.INSCRICAO_MUNICIPAL}</td>
+				<td class="tg-yw4l">${pessoaJuridica.inscricaoMunicipal}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">E-mail</td>
-				<td class="tg-yw4l">${pessoaJuridica.EMAIL}</td>
+				<td class="tg-yw4l">${pessoaJuridica.email}</td>
 			</tr>
 			<tr>
 				<td class="tg-6bre">Data de Constituição</td>
 				<td class="tg-yw4l"><fmt:formatDate
-						value="${pessoaJuridica.DATA_DE_CONSTITUICAO}"
+						value="${pessoaJuridica.dataConstituicao}"
 						pattern="dd/MM/yyyy HH:mm:ss" /></td>
 			</tr>
 
 			<tr>
 				<td class="tg-6bre">Atividade(s) Desenvolvida(s)</td>
-				<td class="tg-yw4l">${pessoaJuridica.ATIVIDADES_DESENVOLVIDAS}</td>
+				<td class="tg-yw4l">${pessoaJuridica.atividadesDesenvolvidas}</td>
 			</tr>
 
 			<tr>
 				<td class="tg-6bre">Genero de Atividade</td>
-				<td class="tg-yw4l">${pessoaJuridica.GENERO_DA_ATIVIDADES}</td>
+				<td class="tg-yw4l">${pessoaJuridica.generoAtividade}</td>
 			</tr>
 
 			<tr>
 				<td class="tg-6bre">Especie da atividade</td>
-				<td class="tg-yw4l">${pessoaJuridica.ESPECE_DA_ATIVIDADE}</td>
+				<td class="tg-yw4l">${pessoaJuridica.especieAtividade}</td>
 			</tr>
 		</table>
 

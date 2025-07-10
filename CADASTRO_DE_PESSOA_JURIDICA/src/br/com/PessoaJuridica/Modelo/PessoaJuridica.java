@@ -24,7 +24,6 @@ public class PessoaJuridica implements Serializable {
     private String razaoSocial;
 
     @NotBlank(message = "O nome fantasia deve ser preenchido!")
-    @Column(unique = true)
     private String nomeFantasia;
 
     @NotBlank(message = "O campo CEP deve ser preenchido!")

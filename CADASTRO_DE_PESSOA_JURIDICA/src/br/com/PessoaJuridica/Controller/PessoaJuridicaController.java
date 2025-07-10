@@ -24,11 +24,26 @@ public class PessoaJuridicaController {
 		this.dao = dao;
 	}
 
+	@RequestMapping(value = "/adicionaPessoaJuridica", method = RequestMethod.POST)
+	public String adiciona(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
+		try {
+			if (pessoaJuridica.getId() == null) {
+				this.dao.adiciona(pessoaJuridica);
+				return "PessoaJuridicaAdicionado";
+			} else {
+				this.dao.altera(pessoaJuridica);
+				return "redirect:listaPessoaJuridica";
+			}
+		} catch (Exception e) {
+			return "forward:existePessoaJuridicaErro";
+		}
+	}
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout() {
 		return "Apresentacao";
 	}
-	
+
 	@RequestMapping(value = "/novaPessoaJuridica", method = RequestMethod.GET)
 	public String form() {
 		System.out.println("Redirecionando para a pagina de cadastro");
@@ -37,35 +52,17 @@ public class PessoaJuridicaController {
 
 	@RequestMapping(value = "/novaPessoaJuridicaErro", method = RequestMethod.POST)
 	public String adicionaErro(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
-		return "AdicionaPessoaJuridica";
+		return "AlterarPessoaJuridica";
 	}
 
 	@RequestMapping(value = "/novaPessoaJuridicaErroAlteracao")
 	public String erroAlteracao(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
 		return "AlterarPessoaJuridica";
 	}
-	
+
 	@RequestMapping(value = "/existePessoaJuridicaErro")
 	public String erroAdd(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
 		return "PessoaJuridicaExisteErro";
-	}
-
-	@RequestMapping(value = "/adicionaPessoaJuridica", method = RequestMethod.POST)
-	public String adiciona(@Valid PessoaJuridica pessoaJuridica, BindingResult result) {
-		try {
-			if (result.hasFieldErrors()) {
-				return "forward:novaPessoaJuridicaErro";
-			}
-			if (pessoaJuridica.getId() == null) {
-				this.dao.adiciona(pessoaJuridica);
-				return "PessoaJuridicaAdicionado";
-			}else{
-			    this.dao.altera(pessoaJuridica);
-			    return "redirect:listaPessoaJuridica";
-			}
-		} catch (Exception e) {
-			   return "forward:existePessoaJuridicaErro";
-		}
 	}
 
 	@RequestMapping(value = "/listaPessoaJuridica", method = RequestMethod.GET)
@@ -73,7 +70,7 @@ public class PessoaJuridicaController {
 		model.addAttribute("pessoaJuridica", dao.getAllPessoaJuridica());
 		return "ListaPessoaJuridica";
 	}
-	
+
 	@RequestMapping(value = "/listaPessoaJuridicaUsuario", method = RequestMethod.GET)
 	public String listaPessoaJuridicaUsuario(Model model) throws Exception {
 		model.addAttribute("pessoaJuridica", dao.getAllPessoaJuridica());
@@ -93,7 +90,7 @@ public class PessoaJuridicaController {
 		model.addAttribute("pessoaJuridica", pessoaJuridica);
 		return "AlterarPessoaJuridica";
 	}
-	
+
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

@@ -1,65 +1,95 @@
-function limpa_formulário_cep() {
-	// Limpa valores do formulário de cep.
-	document.getElementById('RUA').value = ("");
-	document.getElementById('BAIRRO').value = ("");
-	document.getElementById('CIDADE').value = ("");
-	document.getElementById('ESTADO').value = ("");
-}
+// Função para limpar os campos do formulário de endereço e o campo CEP
+       function limpa_formulario_cep() {
+           document.getElementById('cep').value = ""; // Limpa o campo CEP também
+           document.getElementById('rua').value = "";
+           document.getElementById('bairro').value = "";
+           document.getElementById('cidade').value = "";
+           document.getElementById('estado').value = "";
+           // Opcional: Esconder a caixa de mensagem se estiver visível
+           const messageBox = document.getElementById('messageBox');
+           if (messageBox) {
+               messageBox.style.display = 'none';
+           }
+       }
 
-function meu_callback(conteudo) {
+       // Função para formatar o CEP enquanto o usuário digita
+       function formatarCEP(input) {
+           let value = input.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+           if (value.length > 5) {
+               value = value.substring(0, 5) + '-' + value.substring(5, 8);
+           }
+           input.value = value;
+       }
 
-	if (!("erro" in conteudo)) {
-		// Atualiza os campos com os valores.
-		document.getElementById('RUA').value = (conteudo.logradouro);
-		document.getElementById('BAIRRO').value = (conteudo.bairro);
-		document.getElementById('CIDADE').value = (conteudo.localidade);
-		document.getElementById('ESTADO').value = (conteudo.uf);
-	} // end if.
-	else {
-		// CEP não Encontrado.
-		limpa_formulário_cep();
-		alert("CEP não encontrado.");
-	}
-}
+       // Função para exibir mensagens na tela
+       function showMessage(message, type) {
+           let messageBox = document.getElementById('messageBox');
+           if (!messageBox) {
+               messageBox = document.createElement('div');
+               messageBox.id = 'messageBox';
+               messageBox.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-lg text-white z-50';
+               document.body.appendChild(messageBox);
+           }
 
-function pesquisacep(valor) {
+           messageBox.textContent = message;
+           messageBox.style.display = 'block';
 
-	// Nova variável "cep" somente com dígitos.
-	var cep = valor.replace(/\D/g, '');
+           if (type === 'error') {
+               messageBox.style.backgroundColor = '#ef4444'; /* bg-red-500 */
+           } else {
+               messageBox.style.backgroundColor = '#22c55e'; /* bg-green-500 */
+           }
 
-	// Verifica se campo cep possui valor informado.
-	if (cep != "") {
+           setTimeout(() => {
+               messageBox.style.display = 'none';
+           }, 3000); // Esconde a mensagem após 3 segundos
+       }
 
-		// Expressão regular para validar o CEP.
-		var validacep = /^[0-9]{8}$/;
+       // Sua função buscarCEP adaptada para preencher o formulário
+       function buscarCEP(valor) {
+           // Remove caracteres não numéricos do CEP
+           let cep = valor.replace(/\D/g, '');
 
-		// Valida o formato do CEP.
-		if (validacep.test(cep)) {
+           // Preenche os campos com "..." enquanto consulta webservice.
+           document.getElementById('rua').value = "...";
+           document.getElementById('bairro').value = "...";
+           document.getElementById('cidade').value = "...";
+           document.getElementById('estado').value = "...";
 
-			// Preenche os campos com "..." enquanto consulta webservice.
-			document.getElementById('RUA').value = "...";
-			document.getElementById('BAIRRO').value = "...";
-			document.getElementById('CIDADE').value = "...";
-			document.getElementById('ESTADO').value = "...";
+           // Verifica se o CEP tem 8 dígitos
+           if (cep.length !== 8) {
+               limpa_formulario_cep();
+               showMessage('Formato de CEP inválido.', 'error');
+               return;
+           }
 
-			// Cria um elemento javascript.
-			var script = document.createElement('script');
+           // Faz a requisição para a API ViaCEP usando fetch
+           fetch(`https://viacep.com.br/ws/${cep}/json/`)
+               .then(response => {
+                   if (!response.ok) {
+                       throw new Error('Erro na requisição: ' + response.statusText);
+                   }
+                   return response.json();
+               })
+               .then(data => {
+                   if (data.erro) {
+                       limpa_formulario_cep();
+                       showMessage('CEP não encontrado!', 'error');
+                   } else {
+                       // Preenche os campos do formulário com os dados recebidos
+                       document.getElementById('rua').value = data.logradouro;
+                       document.getElementById('bairro').value = data.bairro;
+                       document.getElementById('cidade').value = data.localidade;
+                       document.getElementById('estado').value = data.uf;
+                       showMessage('CEP encontrado com sucesso!', 'success');
+                   }
+               })
+               .catch(error => {
+                   limpa_formulario_cep();
+                   showMessage('Erro ao consultar o CEP. Tente novamente.', 'error');
+                   console.error('Erro:', error); // Para depuração no console do navegador
+               });
+       }
 
-			// Sincroniza com o callback.
-			script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
-
-			// Insere script no documento e carrega o conteúdo.
-			document.body.appendChild(script);
-
-		} // end if.
-		else {
-			// cep é inválido.
-			limpa_formulário_cep();
-			alert("Formato de CEP inválido.");
-		}
-	} // end if.
-	else {
-		// cep sem valor, limpa formulário.
-		limpa_formulário_cep();
-	}
-};
+       // Exemplo de uso (opcional, a função é chamada no onblur do input)
+       // buscarCEP('88010001');

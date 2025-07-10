@@ -33,7 +33,35 @@ public class JpaPessoaJuridicaDao implements PessoaJuridicaDao {
 	}
 
 	public void altera(PessoaJuridica pessoaJuridica) {
-		this.manager.merge(pessoaJuridica);
+		
+		PessoaJuridica findPj = buscaPorId(pessoaJuridica.getId());
+		
+		PessoaJuridica pj = new PessoaJuridica();
+		
+		pj.setId(findPj.getId());
+	    pj.setRazaoSocial(pessoaJuridica.getRazaoSocial());
+	    pj.setNomeFantasia(findPj.getNomeFantasia());
+	    pj.setCep(pessoaJuridica.getCep());
+	    pj.setRua(pessoaJuridica.getRua());
+	    pj.setBairro(pessoaJuridica.getBairro());
+	    pj.setCidade(pessoaJuridica.getCidade());
+	    pj.setEstado(pessoaJuridica.getEstado());
+	    pj.setPais(pessoaJuridica.getPais());
+	    pj.setTelefone(pessoaJuridica.getTelefone());
+	    pj.setCnpj(pessoaJuridica.getCnpj());
+	    pj.setInscricaoEstadual(pessoaJuridica.getInscricaoEstadual());
+	    pj.setInscricaoMunicipal(pessoaJuridica.getInscricaoMunicipal());
+	    pj.setRepresentanteLegalNome(pessoaJuridica.getRepresentanteLegalNome());
+	    pj.setEmail(pessoaJuridica.getEmail());
+	    pj.setDataConstituicao(pessoaJuridica.getDataConstituicao());
+	    pj.setAtividadesDesenvolvidas(pessoaJuridica.getAtividadesDesenvolvidas());
+	    pj.setGeneroAtividade(pessoaJuridica.getGeneroAtividade());
+	    pj.setEspecieAtividade(pessoaJuridica.getEspecieAtividade());
+	    pj.setCpfRepresentanteLegal(pessoaJuridica.getCpfRepresentanteLegal());
+	    pj.setTelefoneRepresentanteLegal(pessoaJuridica.getTelefoneRepresentanteLegal());
+	    
+		
+		this.manager.merge(pj);
 	}
 
 	public void remove(PessoaJuridica pessoaJuridica) {
